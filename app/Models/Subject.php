@@ -9,6 +9,8 @@ class Subject extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['isbn_code', 'title', 'class_id', 'author'];
+
     public function stocks(){
         return $this->hasMany(Stock::class);
     }
