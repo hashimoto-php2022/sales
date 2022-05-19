@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Subject extends Model
 {
     use HasFactory;
+
+    public function stocks(){
+        return $this->hasMany(Stock::class);
+    }
+
+    public function classification(){
+        return $this->belongsTo(classification::class);
+    }
 }

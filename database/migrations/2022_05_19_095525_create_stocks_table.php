@@ -15,10 +15,10 @@ class CreateStocksTable extends Migration
     {
         Schema::create('stocks', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('user_id' , 8)->unsigned()->index();
-            $table->bigInteger('subject_id' , 8)->unsigned()->index();;
+            $table->bigInteger('user_id')->unsigned();
+            $table->bigInteger('subject_id')->unsigned();
             $table->string('status' , 3);
-            $table->integer('price' , 4);
+            $table->integer('price');
             $table->boolean('stock');
             $table->string('remarks' , 200)->nullable();
             $table->date('deleted_at')->nullable();
