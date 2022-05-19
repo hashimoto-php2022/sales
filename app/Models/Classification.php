@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Classification extends Model
 {
     use HasFactory;
+
+    public function subjects(){
+        return $this->hasMany(subject::class);
+    }
 }
