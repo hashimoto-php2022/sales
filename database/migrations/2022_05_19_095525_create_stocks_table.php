@@ -22,7 +22,7 @@ class CreateStocksTable extends Migration
             $table->boolean('stock');
             $table->string('remarks' , 200)->nullable();
             $table->date('deleted_at')->nullable();
-            $table->timestamps()
+            $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('subject_id')->references('id')->on('subjects')->onDelete('cascade');
