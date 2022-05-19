@@ -15,7 +15,17 @@ class CreateStocksTable extends Migration
     {
         Schema::create('stocks', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->bigInteger('user_id' , 8)->unsigned()->index();
+            $table->bigInteger('subject_id' , 8)->unsigned()->index();;
+            $table->string('status' , 3);
+            $table->integer('price' , 4);
+            $table->boolean('stock');
+            $table->string('remarks' , 200)->nullable();
+            $table->date('deleted_at')->nullable();
+            $table->timestamps()
+
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('subject_id')->references('id')->on('subjects')->onDelete('cascade');
         });
     }
 
