@@ -9,14 +9,13 @@ class Subject extends Model
 {
     use HasFactory;
 
-    public function stocks()
-    {
-        return $this->hasMany(stock::class);
+    protected $fillable = ['isbn_code', 'title', 'class_id', 'author'];
+
+    public function stocks(){
+        return $this->hasMany(Stock::class);
     }
 
-    public function classification()
-    {
+    public function classification(){
         return $this->belongsTo(classification::class);
     }
-
 }
