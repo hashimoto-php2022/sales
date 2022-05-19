@@ -17,7 +17,7 @@ class CreateSubjectsTable extends Migration
             $table->id();
             $table->string('isbn_code', 13)->unique();
             $table->string('title', 50);
-            $table->bigInteger('class_id', 2)->unsigned()->index();
+            $table->bigInteger('class_id')->unsigned()->index();
             $table->string('author', 50);
             $table->timestamps();
 
