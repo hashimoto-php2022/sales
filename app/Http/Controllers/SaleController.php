@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\sale;
+use App\Models\Sale;
 use Illuminate\Http\Request;
 
 class SaleController extends Controller
@@ -41,10 +41,10 @@ class SaleController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\sale  $sale
+     * @param  \App\Models\Sale  $sale
      * @return \Illuminate\Http\Response
      */
-    public function show(sale $sale)
+    public function show(Sale $sale)
     {
         //
     }
@@ -52,10 +52,10 @@ class SaleController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\sale  $sale
+     * @param  \App\Models\Sale  $sale
      * @return \Illuminate\Http\Response
      */
-    public function edit(sale $sale)
+    public function edit(Sale $sale)
     {
         //
     }
@@ -64,10 +64,10 @@ class SaleController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\sale  $sale
+     * @param  \App\Models\Sale  $sale
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, sale $sale)
+    public function update(Request $request, Sale $sale)
     {
         //
     }
@@ -75,10 +75,10 @@ class SaleController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\sale  $sale
+     * @param  \App\Models\Sale  $sale
      * @return \Illuminate\Http\Response
      */
-    public function destroy(sale $sale)
+    public function destroy(Sale $sale)
     {
         //
     }
