@@ -2,7 +2,9 @@
 
 namespace Database\Seeders;
 
+
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
 class UserSeeder extends Seeder
 {
@@ -15,32 +17,32 @@ class UserSeeder extends Seeder
     {
         $data = [
             [
-                'password' => 'pass1',
+                'password' => 'passpas1',
                 'name' => '山田 太郎',
                 'address' => '東京都',
                 'tel_number' => '090-1111-1111',
-                'e_mail' => 'aaaa@co.jp',
+                'email' => 'aaaa@co.jp',
                 'birthday' => '2022-01-01',
                 'administrator' => '0',
             ],
             [
-                'password' => 'pass2',
+                'password' => 'passpas2',
                 'name' => '山田 次郎',
                 'address' => '京都',
                 'tel_number' => '090-2222-2222',
-                'e_mail' => 'bbbb@co.jp',
+                'email' => 'bbbb@co.jp',
                 'birthday' => '2022-01-02',
                 'administrator' => '0',
             ],
             [
-                'password' => 'pass3',
+                'password' => 'passpas3',
                 'name' => '山田 三郎',
                 'address' => '沖縄',
                 'tel_number' => '090-3333-3333',
-                'e_mail' => 'cccc@co.jp',
+                'email' => 'cccc@co.jp',
                 'birthday' => '2022-01-03',
                 'administrator' => '1',
-            ],
+            ],     
         ];
         \DB::table('users')->insert($data);
     }
