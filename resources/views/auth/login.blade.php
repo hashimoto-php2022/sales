@@ -1,12 +1,25 @@
-@extends('layouts.app')
 
-@section('content')
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{ config('app.name') }}</title>
+</head>
+<body>
 <h1 style="text-align:center">ログイン</h1>
+@foreach($errors->all() as $error)
+ <p>{{ $error }}</p>
+@endforeach
+
 <form action="{{route('login')}}"method="post"><br>
     @csrf
     <p style="text-align:center">
         <label>メールアドレス</label><br>
-        <input type="e_mail" name="e_mail" value="{{old('e_mail')}}">
+
+        <input type="email" name="email" value="{{old('email')}}">
+
 </p>
 <p  style="text-align:center" >
     <label style="text-align:center">パスワード</label><br>
@@ -19,4 +32,6 @@
     <a href="{{ route('register') }}">会員登録</a>
 </p>
 </form>
-@endsection
+</body>
+</html>
+
