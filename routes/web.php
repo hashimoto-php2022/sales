@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+
 use App\Http\Controllers\StockController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +22,5 @@ Route::get('/', function () {
 
 //Route::get('/stocks', [StockController::class, 'index']);
 Route::resource('stocks', StockController::class);
+// Route::post('/register_conf', function() { return view('auth.register_conf'); })->name('register_conf');
+Route::post('/register_conf', [AuthController::class, 'delivery'])->name('register_conf');

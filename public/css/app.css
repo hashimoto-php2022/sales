@@ -748,6 +748,7 @@ svg.w-5.h-5 {
   vertical-align: middle;
 }
 
+
 .hover\:bg-gray-800:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(31 41 55 / var(--tw-bg-opacity));

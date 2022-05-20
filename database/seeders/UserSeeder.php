@@ -17,7 +17,8 @@ class UserSeeder extends Seeder
     {
         $data = [
             [
-                'password' => 'passpas1',
+
+                'password' => 'password',
                 'name' => '山田 太郎',
                 'address' => '東京都',
                 'tel_number' => '090-1111-1111',
@@ -26,7 +27,8 @@ class UserSeeder extends Seeder
                 'administrator' => '0',
             ],
             [
-                'password' => 'passpas2',
+
+                'password' => 'password2',
                 'name' => '山田 次郎',
                 'address' => '京都',
                 'tel_number' => '090-2222-2222',
@@ -35,7 +37,7 @@ class UserSeeder extends Seeder
                 'administrator' => '0',
             ],
             [
-                'password' => 'passpas3',
+                'password' => 'password3',
                 'name' => '山田 三郎',
                 'address' => '沖縄',
                 'tel_number' => '090-3333-3333',

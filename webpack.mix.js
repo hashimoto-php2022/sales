@@ -12,15 +12,6 @@ const tailwindcss = require('tailwindcss');
  |
  */
 
-//  mix.js('resources/js/app.js', 'public/js').autoload( {
-//     "jquery": [ '$', 'window.jQuery' ],
-// } ).postCss('resources/css/app.css', 'public/css', [
-//     //require('postcss-import'),
-//     require('postcss-custom-properties'),
-//     require('tailwindcss'),
-//     require('autoprefixer'),
-// ]);
-
 mix.sass('resources/sass/app.scss', 'public/css')
     .options({ 
         processCssUrls: false, //公式ドキュメント参照
