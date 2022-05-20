@@ -17,7 +17,7 @@ class CreateStocksTable extends Migration
             $table->id();
 
             $table->bigInteger('user_id')->unsigned()->index();
-            $table->bigInteger('subject_id')->unsigned()->index();;
+            $table->bigInteger('subject_id')->unsigned()->index();
 
             $table->string('status' , 3);
             $table->integer('price');

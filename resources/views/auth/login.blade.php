@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -11,11 +12,14 @@
 @foreach($errors->all() as $error)
  <p>{{ $error }}</p>
 @endforeach
+
 <form action="{{route('login')}}"method="post"><br>
     @csrf
     <p style="text-align:center">
         <label>メールアドレス</label><br>
+
         <input type="email" name="email" value="{{old('email')}}">
+
 </p>
 <p  style="text-align:center" >
     <label style="text-align:center">パスワード</label><br>
@@ -30,3 +34,4 @@
 </form>
 </body>
 </html>
+

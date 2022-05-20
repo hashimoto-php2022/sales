@@ -1,4 +1,5 @@
 {{-- @if(Auth::check()) --}}
+
 <ul class="navigation">
     <li>
         <a href="#">教科書登録</a>
@@ -23,4 +24,5 @@
         </script>
     </li> --}}
 </ul>
+
 {{-- @endif --}}

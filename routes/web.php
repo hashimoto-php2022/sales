@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\HomeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,5 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
 // Route::post('/register_conf', function() { return view('auth.register_conf'); })->name('register_conf');
 Route::post('/register_conf', [AuthController::class, 'delivery'])->name('register_conf');
+

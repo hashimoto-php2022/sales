@@ -8,6 +8,7 @@
     <title>{{ config('app.name') }}</title>
 </head>
 <body>
+
     {{-- <body> --}}
     <header>
         <div class="container">
@@ -21,5 +22,6 @@
         </div>
     </main>
     {{-- </body> --}}
+
 </body>
 </html>
