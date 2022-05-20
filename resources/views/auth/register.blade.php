@@ -8,7 +8,9 @@
 </head>
 <body>
     <h1>会員登録</h1>
+
         {{-- <form action="{{ route('register_conf') }}" method="post"> --}}
+
         <form action="{{ route('register') }}" method="post">
             @csrf
             <p>
@@ -28,10 +30,12 @@
                 <input type="email" name="email" value="{{ old('email') }}"></label>
             </p>
             <p>
+
                 <label>生年月日<br>
                 <input type="date" name="birthday" value="{{ old('birthday') }}"></label>
             </p>
             <p>
+
             <label>パスワード<br>
             <input type="password" name="password" value=""></label>
             </p>
@@ -40,6 +44,7 @@
                 <input type="password" name="password_confirmation" value=""></label>
             </p>
             <input type="hidden" name="administrator" value="0">
+
             <p>
                 <button type="submit">確認画面へ</button>
             </p>
