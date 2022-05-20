@@ -424,6 +424,39 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-backdrop-saturate:  ;
   --tw-backdrop-sepia:  ;
 }
+.container {
+  width: 100%;
+}
+@media (min-width: 640px) {
+
+  .container {
+    max-width: 640px;
+  }
+}
+@media (min-width: 768px) {
+
+  .container {
+    max-width: 768px;
+  }
+}
+@media (min-width: 1024px) {
+
+  .container {
+    max-width: 1024px;
+  }
+}
+@media (min-width: 1280px) {
+
+  .container {
+    max-width: 1280px;
+  }
+}
+@media (min-width: 1536px) {
+
+  .container {
+    max-width: 1536px;
+  }
+}
 .fixed {
   position: fixed;
 }
@@ -519,10 +552,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-border-opacity: 1;
   border-color: rgb(229 231 235 / var(--tw-border-opacity));
 }
-.bg-red-400 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(248 113 113 / var(--tw-bg-opacity));
-}
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
@@ -601,9 +630,94 @@ Ensure the default browser behavior of the `hidden` attribute.
 .shadow {
   --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
-  box-shadow: 0 0 #0000, 0 0 #0000, var(--tw-shadow);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
+html {
+  font-size: 90%;
+  line-height: 1.8;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+input[type=text],
+input[type=email],
+input[type=password],
+textarea {
+  width: 360px;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #cacaca;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+header {
+  background-color: #fef9c3;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+}
+
+header .brand {
+  display: block;
+  font-size: 1.3rem;
+}
+
+.navigation {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.navigation li {
+  padding: 0 10px;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+th {
+  color: #4169E1;
+  font-weight: bold;
+}
+
+table th,
+table td {
+  padding: 10px 15px;
+  border-bottom: 1px solid #dddddd;
+}
+
+dt {
+  font-weight: bold;
+  margin-bottom: 5px;
+  font-size: 0.9rem;
+}
+
+dd {
+  margin-bottom: 15px;
+}
+
+svg.w-5.h-5 {
+  width: 25px;
+  vertical-align: middle;
+}
+
 @media (prefers-color-scheme: dark) {
 
   .dark\:border-gray-700 {
@@ -636,6 +750,7 @@ Ensure the default browser behavior of the `hidden` attribute.
     color: rgb(156 163 175 / var(--tw-text-opacity));
   }
 }
+
 @media (min-width: 640px) {
 
   .sm\:ml-0 {
@@ -683,6 +798,7 @@ Ensure the default browser behavior of the `hidden` attribute.
     text-align: right;
   }
 }
+
 @media (min-width: 768px) {
 
   .md\:grid-cols-2 {
@@ -697,6 +813,7 @@ Ensure the default browser behavior of the `hidden` attribute.
     border-left-width: 1px;
   }
 }
+
 @media (min-width: 1024px) {
 
   .lg\:px-8 {
