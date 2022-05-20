@@ -17,10 +17,14 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
-    protected $fillable = [
+    protected $fillable = [ //データベースに入る項目
         'name',
+        'address',
+        'tel_number',
         'email',
+        'birthday',
         'password',
+        'administrator',
     ];
 
     /**

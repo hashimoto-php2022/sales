@@ -17,6 +17,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/test', function() {
-    return view('layouts.app');
-});
+// Route::post('/register_conf', function() { return view('auth.register_conf'); })->name('register_conf');
+Route::post('/register_conf', [AuthController::class, 'delivery'])->name('register_conf');
