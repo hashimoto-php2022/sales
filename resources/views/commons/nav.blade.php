@@ -1,3 +1,4 @@
+
 {{-- @if(Auth::check()) --}}
 
     <ul class="navigation">
