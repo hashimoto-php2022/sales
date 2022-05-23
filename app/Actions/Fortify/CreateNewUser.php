@@ -32,14 +32,14 @@ class CreateNewUser implements CreatesNewUsers
             'password' => $this->passwordRules(),
         ])->validate();
 
-        return User::create([ //userを追加
+        return User::create([ //usersテーブルにユーザを追加
             'name' => $input['name'],
             'address' => $input['address'],
             'tel_number' => $input['tel_number'],
             'email' => $input['email'],
             'birthday' => $input['birthday'],
             'password' => Hash::make($input['password']),
-            'administrator' => $input['administrator'],
+            'administrator' => '0', //0:管理者権限を無効 1:有効
         ]);
     }
 }

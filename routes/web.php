@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,5 +19,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Route::post('/register_conf', function() { return view('auth.register_conf'); })->name('register_conf');
 Route::post('/register_conf', [AuthController::class, 'delivery'])->name('register_conf');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
