@@ -42,6 +42,7 @@
     <div id="main">
     <h1>新規会員登録</h1>
         <form action="{{ route('register_conf') }}" method="post">
+
             @csrf
             <p>
                 <label>名前<br>
@@ -61,19 +62,25 @@
                 <input type="email" name="email" value="{{ old('email') }}" placeholder="aaaa@co.jp"></label>
             </p>
             <p>
+
                 <label>生年月日<br>
                 <input type="text" name="birthday" value="{{ old('birthday') }}" placeholder="20220101"></label>
             </p>
             <p>
+
                 <label>パスワード<br>
                 <input type="password" name="password" value=""  placeholder="password"></label>
                  ※8文字以上で記述して下さい！
+
             </p>
             <p>
                 <label>パスワード（確認用）<br>
                 <input type="password" name="password_confirmation" value=""  placeholder="password"></label>
                  ※8文字以上で記述して下さい！
             </p>
+
+            <input type="hidden" name="administrator" value="0">
+
             <p>
                 <a href="{{ route('login') }}" id="rogin">ログイン</a>
                 <button type="submit" class="btn" id="conf">確認画面へ</button>
