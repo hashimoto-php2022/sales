@@ -1,3 +1,6 @@
+@extends('layouts.app')
+@section('content')
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -24,5 +27,6 @@
     <button type="submit">ログイン</button>
 </p>
 </form>
+@endsection
 </body>
 </html>
