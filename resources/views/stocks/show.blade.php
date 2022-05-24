@@ -14,7 +14,19 @@
         <dd>{{ $stock->status }}</dd>
         <dt>在庫</dt>
         <dd>{{ $stock->stock }}</dd>
+        <dt>備考</dt>
+        <dd>{{ $stock->remarks }}</dd>
     </dl>
-
-    <a href="{{ route('stocks.index') }}"><button>教科書一覧へ</button></a>
+    <div align="center">
+        <a href="{{ route('stocks.index') }}"><button class="bg-gray-500 hover:bg-gray-800 text-white rounded px-4 py-2">教科書一覧へ</button></a>
+        @if($stock->user_id === Auth::id())
+            <a href="{{ route('stocks.edit', $stock->id) }}"><button class="bg-blue-500 hover:bg-gray-800 text-white rounded px-4 py-2 ">編集</button></a>        
+        @else
+            @if($stock->stock == 1)
+                <a href="{{ route('stocks.cart', $stock->id) }}"><button class="bg-blue-500 hover:bg-gray-800 text-white rounded px-4 py-2">購入する</button></a>
+            @else
+                <button disabled="disabled" class="bg-gray-300 text-white rounded px-4 py-2 ">在庫がありません</button>
+            @endif
+        @endif
+    </div>
 @endsection

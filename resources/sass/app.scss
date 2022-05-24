@@ -2,8 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
 html {
     font-size: 90%;
     line-height: 1.8;
@@ -12,6 +10,9 @@ body {
     margin: 0;
     padding: 0;
     font-size: 1rem;
+}
+h1 {
+    font-size: 1.5em;
 }
 a:link {
     text-decoration: none;
@@ -25,10 +26,14 @@ textarea {
     border-radius: 4px;
     border: 1px solid #cacaca;
 }
+textarea {
+    height: 100px;
+}
 .container {
     max-width: 960px;
     margin: 0 auto;
     padding: 10px;
+    
 }
 header {
     background-color: #fef9c3;
@@ -62,6 +67,12 @@ table th,
 table td {
     padding: 10px 15px;
     border-bottom: 1px solid #dddddd;
+}
+.search {
+    text-align: left;
+}
+dl {
+    text-align: center;
 }
 dt {
     font-weight: bold;

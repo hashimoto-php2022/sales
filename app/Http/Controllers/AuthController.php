@@ -11,7 +11,7 @@ class AuthController extends Controller
         $auth->name = $request->name;
         $auth->adress = $request->adress;
         $auth->tel_number = $request->tel_number;
-        $auth->e_mail = $request->e_mail;
+        $auth->email = $request->email;
         $auth->password = $request->password;
         $auth->password_confirmation = $request->password_confirmation;
         return view('auth.register_conf', ['auth' => $auth]);

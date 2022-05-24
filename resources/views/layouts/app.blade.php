@@ -8,8 +8,6 @@
     <title>{{ config('app.name') }}</title>
 </head>
 <body>
-
-    {{-- <body> --}}
     <header>
         <div class="container">
             <a class="brand" href="/">TOP</a>
@@ -18,11 +16,10 @@
     </header>
     <main>
         <div class="container">
-            @yield('content')
+            <div class="justify-center">
+                @yield('content')
+            </div>
         </div>
     </main>
-    {{-- </body> --}}
-
-
 </body>
 </html>

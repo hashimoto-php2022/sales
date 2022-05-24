@@ -1,13 +1,12 @@
-{{-- @if(Auth::check()) --}}
-
+@if(Auth::check())
     <ul class="navigation">
         <li>
-            <a href="#">教科書登録</a>
+            <a href="{{ route('stocks.create') }}">教科書登録</a>
         </li>
         <li>
             <a href="#">マイページ</a>
         </li>
-        {{-- <li>
+        <li>
             <a href="#" onclick="logout()">
                 ログアウト
             </a>
@@ -22,6 +21,16 @@
                     }
                 }
             </script>
-        </li> --}}
+        </li>
     </ul>
-{{-- @endif --}}
+@else
+<ul class="navigation">
+    <li>
+        <a href="{{ route('register') }}">新規会員登録</a>
+    </li>
+    <li>
+        <a href="{{ route('login') }}">ログイン</a>
+    </li>
+</ul>
+
+@endif

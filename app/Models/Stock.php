@@ -9,6 +9,8 @@ class Stock extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['user_id', 'subject_id', 'status', 'price', 'stock', 'remarks'];
+
     public function user(){
         return $this->belongsTo(User::class);
     }
