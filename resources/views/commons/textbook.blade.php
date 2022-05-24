@@ -6,7 +6,9 @@
             <th>値段</th>
             <th>在庫</th>
 </tr>
-{{-- </thead>
+
+</thead>
+<tbody>
     @foreach($stocks as $stock)
     <tr>
         <td>{{$stock->subject->title}}</td>

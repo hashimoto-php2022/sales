@@ -4,9 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class HomeController extends Controller
+class UserController extends Controller
 {
-
     /**
      * Display a listing of the resource.
      *
@@ -14,10 +13,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        //自分の蔵書一覧
-        $stocks = \Auth::user()->stocks()->orderBy('created_at','desc')
-                    ->paginate(5);
-        return view('homes/index', ['stocks' => $stocks]); 
+        //
     }
 
     /**
@@ -47,9 +43,9 @@ class HomeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(User $user)
+    public function show($id)
     {
-        return view('homes/show', ['user' => $user]);
+        //
     }
 
     /**
@@ -58,9 +54,9 @@ class HomeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(User $user)
+    public function edit($id)
     {
-        return view('homes/edit' , ['user' => $user]);
+        //
     }
 
     /**
@@ -70,10 +66,9 @@ class HomeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $user)
+    public function update(Request $request, $id)
     {
-        $user->update($request->all());
-        return redirect(route('home.show' , $user))
+        //
     }
 
     /**
