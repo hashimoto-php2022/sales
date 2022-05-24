@@ -17,7 +17,6 @@ class UserSeeder extends Seeder
     {
         $data = [
             [
-
                 'password' => 'password',
                 'name' => '山田 太郎',
                 'address' => '東京都',
@@ -27,7 +26,6 @@ class UserSeeder extends Seeder
                 'administrator' => '0',
             ],
             [
-
                 'password' => 'password2',
                 'name' => '山田 次郎',
                 'address' => '京都',

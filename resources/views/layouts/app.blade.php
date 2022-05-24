@@ -8,8 +8,6 @@
     <title>{{ config('app.name') }}</title>
 </head>
 <body>
-
-    {{-- <body> --}}
     <header>
         <div class="container">
             <a class="brand" href="/">TOP</a>
@@ -21,8 +19,5 @@
             @yield('content')
         </div>
     </main>
-    {{-- </body> --}}
-
-
 </body>
 </html>
