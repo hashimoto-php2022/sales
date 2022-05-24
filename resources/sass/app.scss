@@ -1,9 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-​
-​
-​
+
 html {
     font-size: 90%;
     line-height: 1.8;
@@ -33,7 +31,7 @@ textarea {
 header {
     background-color: #fef9c3;
 }
-​
+
 header .container {
     display: flex;
     justify-content: space-between;
@@ -74,4 +72,38 @@ dd {
 svg.w-5.h-5 {
     width: 25px;
     vertical-align: middle;
+
+}
+
+.title{
+    font-size: 25px;
+}
+
+.main {
+    position: relative;
+    left: 20em;
+    top: -40px;
+    width: 720px;
+}
+
+#conf{
+    position: relative;
+    left: 10em;
+    top: 20px;
+}
+
+#rogin{
+    position: relative;
+    top: 20px;
+}
+
+#btn_ok{
+    position: relative;
+    left: 10em;
+    top: 20px;
+}
+
+#btn_hs{
+    position: relative;
+    top: 20px;
 }

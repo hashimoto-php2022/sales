@@ -8,18 +8,16 @@
     <title>{{ config('app.name') }}</title>
 </head>
 <body>
-    <body>
-        <header>
-            <div class="container">
-                <a class="brand" href="/">TOP</a>
-                @include('commons.nav')
-            </div>
-        </header>
-        <main>
-            <div class="container">
-                @yield('content')
-            </div>
-        </main>
-    </body>
+    <header>
+        <div class="container">
+            <a class="brand" href="/">TOP</a>
+            @include('commons.nav')
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            @yield('content')
+        </div>
+    </main>
 </body>
 </html>
