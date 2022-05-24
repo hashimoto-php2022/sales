@@ -5,7 +5,7 @@
             <a href="{{ route('sales.create') }}">教科書登録</a>
         </li>
         <li>
-            <a href="#">マイページ</a>
+            <a href="{{ route('home') }}">マイページ</a>
         </li>
         <li>
             <a href="#" onclick="logout()">

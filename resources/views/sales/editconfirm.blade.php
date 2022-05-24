@@ -19,8 +19,8 @@
             <dd>{{ $input['remarks'] }}</dd>
         </dl>
         <p>
-            <input name="back" type="submit" formmethod="post" class="bg-gray-300 hover:bg-gray-800 text-white rounded px-4 py-2" value="戻る">
-            <button type="submit" class="bg-blue-300 hover:bg-gray-800 text-white rounded px-4 py-2">登録する</button>
+            <input name="back" type="submit" formmethod="post" class="bg-gray-500 hover:bg-gray-800 text-white rounded px-4 py-2" value="戻る">
+            <button type="submit" class="bg-blue-500 hover:bg-gray-800 text-white rounded px-4 py-2">登録する</button>
         </p>
     </form>
 
