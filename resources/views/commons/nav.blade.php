@@ -2,7 +2,7 @@
 
     <ul class="navigation">
         <li>
-            <a href="{{ route('stocks.create') }}">教科書登録</a>
+            <a href="{{ route('sales.create') }}">教科書登録</a>
         </li>
         <li>
             <a href="#">マイページ</a>

@@ -2,7 +2,7 @@
 
 @section('content')
     <h1>教科書情報編集</h1>
-    <form action="{{ route('stocks.editPost', $stock->id) }}" method="post">
+    <form action="{{ route('sales.editPost', $stock->id) }}" method="post">
         @csrf
         <dl>
             <dt>ISBN番号</dt>
@@ -34,5 +34,5 @@
             <button type="submit" class="bg-blue-500 hover:bg-gray-800 text-white rounded px-4 py-2">確認画面へ</button>
         </p>
     </form>
-    <a href="{{ route('stocks.show', $stock->id) }}"><button class="bg-gray-300 hover:bg-gray-800 text-white rounded px-4 py-2">キャンセル</button></a>
+    <a href="{{ route('sales.show', $stock->id) }}"><button class="bg-gray-300 hover:bg-gray-800 text-white rounded px-4 py-2">キャンセル</button></a>
 @endsection

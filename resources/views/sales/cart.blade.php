@@ -14,11 +14,11 @@
         <dt>状態</dt>
         <dd>{{ $stock->status }}</dd>
     </dl>
-    <form action="{{ route('stocks.buy', $stock->id) }}" method="post">
+    <form action="{{ route('sales.buy', $stock->id) }}" method="post">
         @csrf
         <div align="center">
             <button type="submit" class="bg-blue-500 hover:bg-gray-800 text-white rounded px-4 py-2">購入する</button>
         </div>
     </form>
-    <a href="{{ route('stocks.show', $stock->id) }}"><button class="bg-gray-500 hover:bg-gray-800 text-white rounded px-4 py-2">キャンセル</button></a>
+    <a href="{{ route('sales.show', $stock->id) }}"><button class="bg-gray-500 hover:bg-gray-800 text-white rounded px-4 py-2">キャンセル</button></a>
 @endsection

@@ -2,7 +2,7 @@
 
 @section('content')
     <h1>教科書出品一覧</h1>
-    <form action="{{ route('stocks.index') }}" method="get">
+    <form action="{{ route('sales.index') }}" method="get">
         <dl class="search">
             <dt>教科書名</dt>
             <dd><input type="text" name="title" id="title" value={{ request('title') }}></dd>
@@ -62,7 +62,7 @@
         @foreach($stocks as $stock)
         <tr>
             <td>{{ $stock->subject->classification->class_name }}</td>
-            <td><a href="{{ route('stocks.show', $stock->id) }}">{{ $stock->subject->title }}</a></td>
+            <td><a href="{{ route('sales.show', $stock->id) }}">{{ $stock->subject->title }}</a></td>
             <td>{{ $stock->subject->author }}</td>
             <td>{{ $stock->price }}</td>
             <td>{{ $stock->status }}</td>
