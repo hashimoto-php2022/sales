@@ -84,6 +84,7 @@ class SaleController extends Controller
     public function confirm(Request $request)
     {
         $input = $request->session()->get('form_input');
+        dd($input);
         $class = Classification::find($input['class'])->class_name;
         return view('sales.confirm', ['input' => $input, 'class' => $class]);
     }
@@ -123,8 +124,9 @@ class SaleController extends Controller
             $stock->save();
 
             $request->session()->forget("form_input");
-            return redirect(route('sales.show', $stock->id));
         }
+        
+        return redirect(route('sales.show', $stock->id));
     }
 
     public function edit(Stock $stock, Classification $class)
