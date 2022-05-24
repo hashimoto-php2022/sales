@@ -13,8 +13,8 @@ class AuthController extends Controller
             'tel_number' => 'required||max:13',
             'email' => 'required|unique:users|max:50',
             'birthday' => 'required',
-            'password' => 'required',
-            'password_confirmation' => 'required',
+            'password' => 'required|min:8',
+            'password_confirmation' => 'required|min:8',
         ]);
         $auth = new \App\Models\Auth;
         $auth->name = $request->name;

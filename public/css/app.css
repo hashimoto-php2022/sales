@@ -512,6 +512,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .hidden {
   display: none;
 }
+.h-10 {
+  height: 2.5rem;
+}
 .h-5 {
   height: 1.25rem;
 }
@@ -524,6 +527,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .min-h-screen {
   min-height: 100vh;
 }
+.w-56 {
+  width: 14rem;
+}
 .w-5 {
   width: 1.25rem;
 }
@@ -532,6 +538,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .w-auto {
   width: auto;
+}
+.max-w-xl {
+  max-width: 36rem;
 }
 .max-w-6xl {
   max-width: 72rem;
@@ -548,15 +557,29 @@ Ensure the default browser behavior of the `hidden` attribute.
 .overflow-hidden {
   overflow: hidden;
 }
+.rounded-full {
+  border-radius: 9999px;
+}
 .rounded {
   border-radius: 0.25rem;
 }
 .border-t {
   border-top-width: 1px;
 }
+.border-r {
+  border-right-width: 1px;
+}
 .border-gray-200 {
   --tw-border-opacity: 1;
   border-color: rgb(229 231 235 / var(--tw-border-opacity));
+}
+.border-gray-400 {
+  --tw-border-opacity: 1;
+  border-color: rgb(156 163 175 / var(--tw-border-opacity));
+}
+.bg-violet-600 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(124 58 237 / var(--tw-bg-opacity));
 }
 .bg-white {
   --tw-bg-opacity: 1;
@@ -581,13 +604,17 @@ Ensure the default browser behavior of the `hidden` attribute.
 .p-6 {
   padding: 1.5rem;
 }
+.px-6 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
 .py-4 {
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
-.px-6 {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 .px-4 {
   padding-left: 1rem;
@@ -614,8 +641,18 @@ Ensure the default browser behavior of the `hidden` attribute.
 .font-semibold {
   font-weight: 600;
 }
+.uppercase {
+  text-transform: uppercase;
+}
 .leading-7 {
   line-height: 1.75rem;
+}
+.tracking-wider {
+  letter-spacing: 0.05em;
+}
+.text-white {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 .text-gray-200 {
   --tw-text-opacity: 1;
@@ -748,6 +785,38 @@ svg.w-5.h-5 {
   vertical-align: middle;
 }
 
+.title {
+  font-size: 25px;
+}
+
+.main {
+  position: relative;
+  left: 20em;
+  top: -40px;
+  width: 720px;
+}
+
+#conf {
+  position: relative;
+  left: 10em;
+  top: 20px;
+}
+
+#rogin {
+  position: relative;
+  top: 20px;
+}
+
+#btn_ok {
+  position: relative;
+  left: 10em;
+  top: 20px;
+}
+
+#btn_hs {
+  position: relative;
+  top: 20px;
+}
 
 .hover\:bg-gray-800:hover {
   --tw-bg-opacity: 1;

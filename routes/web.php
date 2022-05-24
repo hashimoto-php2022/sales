@@ -22,6 +22,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::group(['middleware' => ['auth']], function(){
+    Route::get('/home', [HomeController::class, 'index'])->name('home');
+    //処理が重くなる（サーバーが動き続ける）
+    //Route::get('/register_conf', [AuthController::class, 'delivery'])->name('register_conf');
+    //URLはregister_confだが、homeと一緒
+    Route::get('/register_conf', [HomeController::class, 'index'])->name('home');
+});
+
+Route::post('/register_conf', [AuthController::class, 'delivery'])->name('register_conf');
 
 //Route::get('/stocks', [StockController::class, 'index']);
 Route::resource('stocks', StockController::class);
