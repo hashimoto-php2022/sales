@@ -6,6 +6,7 @@
             <th>値段</th>
             <th>在庫</th>
 </tr>
+
 </thead>
 <tbody>
     @foreach($stocks as $stock)
@@ -18,5 +19,4 @@
 @endforeach
 </tbody>
 </table>
-{{$stocks->links()}}
-
+{{$stocks->links()}} --}}

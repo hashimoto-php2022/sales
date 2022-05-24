@@ -22,7 +22,7 @@ class CreateStocksTable extends Migration
             $table->string('status' , 3);
             $table->integer('price');
             $table->boolean('stock');
-            $table->string('remarks' , 200)->nullable();
+            $table->string('remarks', 200)->nullable();
             $table->date('deleted_at')->nullable();
             $table->timestamps();
 

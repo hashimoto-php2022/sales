@@ -2,7 +2,9 @@
 
 namespace Database\Seeders;
 
+
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
 class UserSeeder extends Seeder
 {
@@ -40,7 +42,7 @@ class UserSeeder extends Seeder
                 'email' => 'cccc@co.jp',
                 'birthday' => '2022-01-03',
                 'administrator' => '1',
-            ],
+            ],     
         ];
         \DB::table('users')->insert($data);
     }
