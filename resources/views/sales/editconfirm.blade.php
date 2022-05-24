@@ -1,7 +1,8 @@
 @extends('layouts.app')
 @section('content')
     <h1>入力情報確認</h1>
-    <form action="{{ route('stocks.store') }}" method="post">
+    <form action="{{ route('sales.update', $stock->id) }}" method="post">
+        @method('patch')
         @csrf
         <dl>
             <dt>教科書名</dt>
@@ -17,9 +18,11 @@
             <dt>備考</dt>
             <dd>{{ $input['remarks'] }}</dd>
         </dl>
-        <p align="center">
-            <input name="back" type="submit" class="bg-gray-300 hover:bg-gray-800 text-white rounded px-4 py-2" value="戻る">      
+        <p>
+            <input name="back" type="submit" formmethod="post" class="bg-gray-300 hover:bg-gray-800 text-white rounded px-4 py-2" value="戻る">
             <button type="submit" class="bg-blue-300 hover:bg-gray-800 text-white rounded px-4 py-2">登録する</button>
         </p>
     </form>
+
+    
 @endsection

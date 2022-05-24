@@ -3,11 +3,14 @@
 @section('content')
     <h1>教科書登録</h1>
     @include('commons.flash')
-    <form action="{{ route('stocks.post') }}" method="post">
+    
+    <form action="{{ route('sales.post') }}" method="post">
         @csrf
         <dl>
             <dt>ISBN番号</dt>
-            <dd><input type="text" name="isbn_code" id="isbn_code"  value="{{ old('isbn_code') }}"></dd>
+            <dd><input type="text" name="isbn_code" id="isbn_code" value="{{ old('isbn_code') }}">
+                <button id="getBookInfo" class="">書籍情報取得</button> 
+            </dd>
             <dt>教科書名</dt>
             <dd><input type="text" name="title" id="title" value="{{ old('title') }}"></dd>
             <dt>著者名</dt>
@@ -37,4 +40,29 @@
         </p>
     </form>
     <button name="back" type="back" class="bg-gray-300 hover:bg-gray-800 text-white rounded px-4 py-2">戻る</button>
+
+    <script>
+        $(function() {
+            $('#getBookInfo').click( function( e ) {
+                e.preventDefault();
+                const isbn = $("#isbn_code").val();
+                const url = "https://api.openbd.jp/v1/get?isbn=" + isbn;
+
+                $.getJSON( url, function( data ) {
+                    if( data[0] == null ) {
+                        alert("データが見つかりません");
+                    } else {
+                        $("#title").val(data[0].summary.title);
+                        // $("#publisher").val(data[0].summary.publisher);
+                        // $("#volume").val(data[0].summary.volume);
+                        // $("#series").val(data[0].summary.series);
+                        $("#author").val(data[0].summary.author);
+                        // $("#pubdate").val(data[0].summary.pubdate);
+                        // $("#cover").val(data[0].summary.cover);
+                        // $("#description").val(data[0].onix.CollateralDetail.TextContent[0].Text);
+                    }
+                });
+            });
+        });
+    </script>
 @endsection
