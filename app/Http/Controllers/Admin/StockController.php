@@ -44,6 +44,7 @@ class StockController extends Controller
 
     public function show($id)
     {
+        $this->authorize(Auth::user());
         $stock=Stock::find($id);
             return view('admins/stocks/show', ['stock' => $stock]);
     }
