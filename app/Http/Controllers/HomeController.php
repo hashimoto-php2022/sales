@@ -3,10 +3,22 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\Models\User;
+use Validator;
 
 class HomeController extends Controller
 {
+    private $formItems = ["name", "address", "tel_number", "email"];
 
+    private $validator =[
+        "name" => "required|string",
+        "address" => "required|string",
+        "tel_number" => "required|string",
+        "email" => "required|string"
+    ];
+
+    
     /**
      * Display a listing of the resource.
      *
@@ -17,9 +29,40 @@ class HomeController extends Controller
         //自分の蔵書一覧
         $stocks = \Auth::user()->stocks()->orderBy('created_at','desc')
                     ->paginate(5);
-        return view('homes/index', ['stocks' => $stocks]); 
+                    $id = \Auth::id();
+        return view('home/index', ['stocks' => $stocks , 'id' => $id ]); 
+
+    }
+    function post(Request $request , User $user){
+        
+        
+        $user = $request->input('id');
+        //dd($request);
+		$input = $request->only($this->formItems);
+		
+
+		$validator = Validator::make($input, $this->validator);
+		if($validator->fails()){
+			return redirect()->route("home.edit")
+				->withInput()
+				->withErrors($validator);
+		}
+        $request->session()->put("form_input", $input);
+
+        return redirect(route('home.confirm' , $user));
     }
 
+    public function confirm(User $user , Request $request)
+    {
+        $input = $request->session()->get("form_input");
+        
+        
+        // if(!$input){
+        //     return redirect()->action("home");
+        // }    
+        return view('home.confirm', ['input' => $input]);
+
+	}
     /**
      * Show the form for creating a new resource.
      *
@@ -47,9 +90,11 @@ class HomeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(User $user)
+    public function show($id)
     {
-        return view('homes/show', ['user' => $user]);
+        
+        $user = User::find($id);
+        return view('home.show', ['user' => $user]);
     }
 
     /**
@@ -58,9 +103,13 @@ class HomeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(User $user)
+    public function edit($id)
     {
-        return view('homes/edit' , ['user' => $user]);
+        
+        $user = User::find($id);
+        //dd($user);
+        return view('home.edit', ['user' => $user]);
+		//return redirect()->action("SampleFormController@confirm");
     }
 
     /**
@@ -72,8 +121,19 @@ class HomeController extends Controller
      */
     public function update(Request $request, User $user)
     {
-        $user->update($request->all());
-        return redirect(route('homes.show' , $user));
+
+        $user = \Auth::user();
+        
+        //$input = new User;
+        $input = $request->session()->get("form_input");
+        
+                //セッションに値が無い時はフォームに戻る
+                if(!$input){
+                    return redirect()->route("home.edit" , \Auth::id());
+                }
+                $user->update($input);
+                
+                return redirect(route('home.show' , $user));
     }
 
     /**

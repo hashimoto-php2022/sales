@@ -11,9 +11,9 @@
     <dt>電話番号</dt>
     <dd>{{$user->tel_number}}</dd>
     <dt>メールアドレス</dt>
-    <dd>{{$user->e_mail}}</dd>
+    <dd>{{$user->email}}</dd>
 </dl>
 
-<a href = "{{ route('home.edit' , $user) }}">編集するンゴね</a>
+<a href = "{{ route('home.edit' , Auth::id()) }}">編集するンゴね</a>
 
 @endsection
