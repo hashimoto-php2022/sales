@@ -1,4 +1,5 @@
 @if(Auth::check())
+
     <ul class="navigation">
         <li>
             <a href="{{ route('stocks.create') }}">教科書登録</a>
@@ -34,3 +35,4 @@
 </ul>
 
 @endif
+

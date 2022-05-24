@@ -85,4 +85,38 @@ dd {
 svg.w-5.h-5 {
     width: 25px;
     vertical-align: middle;
+
+}
+
+.title{
+    font-size: 25px;
+}
+
+.main {
+    position: relative;
+    left: 20em;
+    top: -40px;
+    width: 720px;
+}
+
+#conf{
+    position: relative;
+    left: 10em;
+    top: 20px;
+}
+
+#rogin{
+    position: relative;
+    top: 20px;
+}
+
+#btn_ok{
+    position: relative;
+    left: 10em;
+    top: 20px;
+}
+
+#btn_hs{
+    position: relative;
+    top: 20px;
 }
