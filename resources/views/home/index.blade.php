@@ -5,7 +5,7 @@
 <br><br>
 
 <p style="text-align:center">
-    <a href="{{ route('register') }}">会員情報</a>
+    <a href="{{ route('home.show' , $id ) }}">会員情報</a>
 
     <a href="{{ route('register') }}">教科書登録</a>
 

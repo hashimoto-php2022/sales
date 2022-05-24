@@ -46,6 +46,8 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+
+
     public function stocks(){
         return $this->hasMany(Stock::class);
     }
