@@ -2,8 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
 html {
     font-size: 90%;
     line-height: 1.8;
@@ -13,6 +11,9 @@ body {
     padding: 0;
     font-size: 1rem;
 }
+h1 {
+    font-size: 1.5em;
+}
 a:link {
     text-decoration: none;
 }
@@ -20,15 +21,19 @@ input[type=text],
 input[type=email],
 input[type=password],
 textarea {
-    width: 360px;
+    // width: 360px;
     padding: 8px;
     border-radius: 4px;
     border: 1px solid #cacaca;
+}
+textarea {
+    height: 100px;
 }
 .container {
     max-width: 960px;
     margin: 0 auto;
     padding: 10px;
+    
 }
 header {
     background-color: #fef9c3;
@@ -63,6 +68,12 @@ table td {
     padding: 10px 15px;
     border-bottom: 1px solid #dddddd;
 }
+.search {
+    text-align: left;
+}
+dl {
+    text-align: center;
+}
 dt {
     font-weight: bold;
     margin-bottom: 5px;
@@ -74,6 +85,7 @@ dd {
 svg.w-5.h-5 {
     width: 25px;
     vertical-align: middle;
+
 }
 
 .title{
