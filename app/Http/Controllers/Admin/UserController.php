@@ -5,11 +5,14 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
+
 
 class UserController extends Controller
 {
     public function index(Request $request)
     {
+        $this->authorize(Auth::user());
         $users = User::get();
 
         $query = User::select('id', 'name', 'address', 'tel_number', 'email');
@@ -31,6 +34,7 @@ class UserController extends Controller
 
     public function destroy($id)
     {
+     
         $user=User::find($id);
        $user->delete();
             return redirect(route('users.index'));
