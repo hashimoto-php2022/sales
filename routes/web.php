@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\StockController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,3 +21,17 @@ Route::get('/', function () {
 Route::get('/test', function() {
     return view('layouts.app');
 });
+
+Route::get('/admins/users',[UserController::class, 'index'])
+->name('users.index');
+Route::get('/admins/users/{id}',[UserController::class, 'show'])
+->name('users.show');
+Route::delete('/admins/users/{id}',[UserController::class, 'destroy'])
+->name('users.destroy');
+
+Route::get('/admins/stocks',[StockController::class, 'index'])
+->name('stocks.index');
+Route::get('/admins/stocks/{id}',[StockController::class, 'show'])
+->name('stocks.show');
+Route::delete('/admins/stocks/{id}',[StockController::class, 'destroy'])
+->name('stocks.destroy');
