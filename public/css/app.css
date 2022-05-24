@@ -477,7 +477,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .max-w-6xl {
   max-width: 72rem;
 }
-.grid-cols-1{
+
+.max-w-xl {
+  max-width: 36rem;
+}
+.grid-cols-1 {
   grid-template-columns: repeat(1, minmax(0, 1fr));
 }
 .items-center{
@@ -522,9 +526,25 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-bg-opacity: 1;
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
 }
+.bg-gray-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(107 114 128 / var(--tw-bg-opacity));
+}
+.bg-gray-300 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(209 213 219 / var(--tw-bg-opacity));
+}
+.bg-blue-300 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(147 197 253 / var(--tw-bg-opacity));
+}
 .bg-red-400 {
   --tw-bg-opacity: 1;
   background-color: rgb(248 113 113 / var(--tw-bg-opacity));
+}
+.bg-blue-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(59 130 246 / var(--tw-bg-opacity));
 }
 .bg-yellow-300 {
   --tw-bg-opacity: 1;
@@ -646,6 +666,10 @@ body {
   font-size: 1rem;
 }
 
+h1 {
+  font-size: 1.5em;
+}
+
 a:link {
   text-decoration: none;
 }
@@ -658,6 +682,10 @@ textarea {
   padding: 8px;
   border-radius: 4px;
   border: 1px solid #cacaca;
+}
+
+textarea {
+  height: 100px;
 }
 
 .container {
@@ -778,6 +806,14 @@ table td {
   border-bottom: 1px solid #dddddd;
 }
 
+.search {
+  text-align: left;
+}
+
+dl {
+  text-align: center;
+}
+
 dt {
   font-weight: bold;
   margin-bottom: 5px;
@@ -792,9 +828,13 @@ svg.w-5.h-5 {
   width: 25px;
   vertical-align: middle;
 }
+.hover\:bg-gray-800:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(31 41 55 / var(--tw-bg-opacity));
+}
+@media (prefers-color-scheme: dark) {
 
-@media (prefers-color-scheme: dark){
-  .dark\:border-gray-700{
+  .dark\:border-gray-700 {
     --tw-border-opacity: 1;
     border-color: rgb(55 65 81 / var(--tw-border-opacity));
   }

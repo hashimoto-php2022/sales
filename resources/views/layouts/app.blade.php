@@ -16,7 +16,9 @@
     </header>
     <main>
         <div class="container">
-            @yield('content')
+            <div class="justify-center">
+                @yield('content')
+            </div>
         </div>
     </main>
 </body>
