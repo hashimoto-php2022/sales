@@ -2,10 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\Admin\UserController;
-use App\Http\Controllers\Admin\StockController;
+use App\Http\Controllers\Admin\UserController as AdminUser;
+use App\Http\Controllers\Admin\StockController as AdminStock;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\SaleController;
 use App\Http\Controllers\StockController;
 
 
@@ -25,6 +26,22 @@ Route::get('/', function () {
 });
 
 //はしもとここから
+// Route::get('/stocks', [SaleController::class, 'index'])->name('stocks.index');
+// Route::group(['middleware' => ['auth']], function() {
+//     Route::get('/stocks/create', [SaleController::class, 'create'])->name('stocks.create');
+//     Route::get('/stocks/confirm', [SaleController::class, 'confirm'])->name('stocks.confirm');
+//     Route::get('/stocks/{stock}/edit', [SaleController::class, 'edit'])->name('stocks.edit');
+//     Route::get('/stocks/{stock}/confirm', [SaleController::class, 'editConfirm'])->name('stocks.editConfirm');
+//     Route::get('/stocks/{stock}/cart', [SaleController::class, 'cart'])->name('stocks.cart');
+//     //Route::resource('stocks', SaleController::class);
+//     Route::post('/stocks', [SaleController::class, 'store'])->name('stocks.store');
+//     Route::post('/stocks/post', [SaleController::class, 'post'])->name('stocks.post');
+//     Route::patch('/stocks/{stock}', [SaleController::class, 'update'])->name('stocks.update');
+//     Route::post('/stocks/{stock}/post', [SaleController::class, 'editPost'])->name('stocks.editPost');
+//     Route::post('/stocks/{stock}/buy', [SaleController::class, 'buy'])->name('stocks.buy');
+// });
+
+// Route::get('/stocks/{stock}', [SaleController::class, 'show'])->name('stocks.show');
 Route::get('/stocks', [StockController::class, 'index'])->name('stocks.index');
 Route::group(['middleware' => ['auth']], function() {
     Route::get('/stocks/create', [StockController::class, 'create'])->name('stocks.create');
@@ -53,24 +70,24 @@ Route::group(['middleware' => ['auth']], function(){
 });
 
 //IKEGAWA
-Route::get('/admins/users',[UserController::class, 'index'])
+Route::get('/admins/users',[AdminUser::class, 'index'])
 ->name('users.index');
-Route::get('/admins/users/{id}',[UserController::class, 'show'])
+Route::get('/admins/users/{id}',[AdminUser::class, 'show'])
 ->name('users.show');
-Route::delete('/admins/users/{id}',[UserController::class, 'destroy'])
+Route::delete('/admins/users/{id}',[AdminUser::class, 'destroy'])
 ->name('users.destroy');
 
-Route::get('/admins/stocks',[StockController::class, 'index'])
+Route::get('/admins/stocks',[AdminStock::class, 'index'])
 ->name('stocks.index');
-Route::get('/admins/stocks/{id}',[StockController::class, 'show'])
+Route::get('/admins/stocks/{id}',[AdminStock::class, 'show'])
 ->name('stocks.show');
-Route::delete('/admins/stocks/{id}',[StockController::class, 'destroy'])
+Route::delete('/admins/stocks/{id}',[AdminStock::class, 'destroy'])
 ->name('stocks.destroy');
 
 Route::post('/register_conf', [AuthController::class, 'delivery'])->name('register_conf');
 
 //Route::get('/stocks', [StockController::class, 'index']);
-Route::resource('stocks', StockController::class);
+//Route::resource('stocks', StockController::class);
 
 // Route::post('/register_conf', function() { return view('auth.register_conf'); })->name('register_conf');
 
