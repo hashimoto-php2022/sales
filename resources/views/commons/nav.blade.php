@@ -1,5 +1,5 @@
 
-{{-- @if(Auth::check()) --}}
+@if(Auth::check())
 
     <ul class="navigation">
         <li>
@@ -8,7 +8,7 @@
         <li>
             <a href="#">マイページ</a>
         </li>
-        {{-- <li>
+        <li>
             <a href="#" onclick="logout()">
                 ログアウト
             </a>
@@ -23,6 +23,6 @@
                     }
                 }
             </script>
-        </li> --}}
+        </li>
     </ul>
-{{-- @endif --}}
+@endif

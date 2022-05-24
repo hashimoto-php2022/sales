@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 class AuthController extends Controller
 {
     public function delivery(Request $request){
+        //requestにはformで送られた値が格納されている
         $this->validate($request, [
             'name' => 'required|max:50',
             'address' => 'required|max:200',
