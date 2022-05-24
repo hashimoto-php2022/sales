@@ -5,12 +5,13 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Stock;
-
+use Illuminate\Support\Facades\Auth;
 
 class StockController extends Controller
 {
     public function index(Request $request)
     {
+        $this->authorize(Auth::user());
         $stocks = Stock::with(['subject.classification'])->get();
         if ($request->title) {
         $stocks=Stock::whereHas('subject', function($query) use ($request){

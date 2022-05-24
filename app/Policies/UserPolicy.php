@@ -2,11 +2,10 @@
 
 namespace App\Policies;
 
-use App\Models\Stock;
 use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
-class StockPolicy
+class UserPolicy
 {
     use HandlesAuthorization;
 
@@ -25,12 +24,12 @@ class StockPolicy
      * Determine whether the user can view the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Stock  $stock
+     * @param  \App\Models\User  $model
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function view(User $user, Stock $stock)
+    public function view(User $user, User $model)
     {
-        //
+        // 
     }
 
     /**
@@ -48,44 +47,35 @@ class StockPolicy
      * Determine whether the user can update the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Stock  $stock
+     * @param  \App\Models\User  $model
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function update(User $user, Stock $stock)
+    public function update(User $user, User $model)
     {
-        return $user->id == $stock->user_id;
-    }
-
-    public function editPost(User $user, Stock $stock)
-    {
-        return $user->id == $stock->user_id;
-    }
-
-    public function editConfirm(User $user, Stock $stock)
-    {
-        return $user->id == $stock->user_id;
+        //
     }
 
     /**
      * Determine whether the user can delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Stock  $stock
+     * @param  \App\Models\User  $model
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function delete(User $user, Stock $stock)
+    public function delete(User $user, User $model)
     {
-        //
+        // 
+
     }
 
     /**
      * Determine whether the user can restore the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Stock  $stock
+     * @param  \App\Models\User  $model
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function restore(User $user, Stock $stock)
+    public function restore(User $user, User $model)
     {
         //
     }
@@ -94,10 +84,10 @@ class StockPolicy
      * Determine whether the user can permanently delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Stock  $stock
+     * @param  \App\Models\User  $model
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function forceDelete(User $user, Stock $stock)
+    public function forceDelete(User $user, User $model)
     {
         //
     }
