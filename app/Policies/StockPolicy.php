@@ -30,7 +30,7 @@ class StockPolicy
      */
     public function view(User $user, Stock $stock)
     {
-        //
+        return $user->administrator == 1;
     }
 
     /**
