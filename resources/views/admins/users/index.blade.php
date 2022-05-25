@@ -52,8 +52,9 @@
             </tr>
         @endforeach
     </tbody>
-</div>
 </table>
+{{ $users->links() }}
+</div>
 
 
 
