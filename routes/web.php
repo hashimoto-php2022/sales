@@ -21,18 +21,7 @@ use App\Http\Controllers\SaleController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
-//Route::get('/form/input', function(){return view('input');});
-//Route::get('/form/confirm', function(){return view('confirm');});
-
-// Route::post('/register_conf', function() { return view('auth.register_conf'); })->name('register_conf');
-//Route::post('/register_conf', [AuthController::class, 'delivery'])->name('register_conf');
-//Route::get('/home', [HomeController::class, 'index'])->name('home');
-//Route::get('/form/confirm' , [FormController::class, 'inputconfirm'])->name('inputconfirm');
-//Route::get('home/confirm', 'HomeController@edit')->middleware('auth');
+//KONTA
 Route::post('home/{id}/post' , [HomeController::class, 'post'])->name('home.post');
 Route::get('home/{id}/confirm' , [HomeController::class, 'confirm'])->name('home.confirm');
 Route::patch('home/{id}' , [HomeController::class, 'update'])->name('home.update');
@@ -44,12 +33,12 @@ Route::get('/test', function() {
 });
 // Route::get('/sales', [SaleController::class, 'index'])->name('sales.index');
 Route::group(['middleware' => ['auth']], function() {
+    //Route::resource('sales', SaleController::class);
     Route::get('/sales/create', [SaleController::class, 'create'])->name('sales.create');
     Route::get('/sales/confirm', [SaleController::class, 'confirm'])->name('sales.confirm');
     Route::get('/sales/{stock}/edit', [SaleController::class, 'edit'])->name('sales.edit');
     Route::get('/sales/{stock}/confirm', [SaleController::class, 'editConfirm'])->name('sales.editConfirm');
     Route::get('/sales/{stock}/cart', [SaleController::class, 'cart'])->name('sales.cart');
-    //Route::resource('sales', SaleController::class);
     Route::post('/sales', [SaleController::class, 'store'])->name('sales.store');
     Route::post('/sales/post', [SaleController::class, 'post'])->name('sales.post');
     Route::patch('/sales/{stock}', [SaleController::class, 'update'])->name('sales.update');
@@ -84,10 +73,3 @@ Route::get('/admins/stocks/{id}',[AdminStock::class, 'show'])
 ->name('stocks.show');
 Route::delete('/admins/stocks/{id}',[AdminStock::class, 'destroy'])
 ->name('stocks.destroy');
-
-Route::post('/register_conf', [AuthController::class, 'delivery'])->name('register_conf');
-
-//Route::get('/stocks', [StockController::class, 'index']);
-//Route::resource('stocks', StockController::class);
-
-// Route::post('/register_conf', function() { return view('auth.register_conf'); })->name('register_conf');

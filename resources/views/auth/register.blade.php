@@ -52,7 +52,12 @@ $flag = true;
                 <label>生年月日<br>
                 <input type="text" name="birthday" value="{{ old('birthday') }}" placeholder="20220101"></label>
                 @foreach($errors->get('birthday') as $error)
-                    <span class="err_msg">{{ $error }}</span>
+                    @php
+                        $target = array('Ymd形式','today');
+                        $replace  = array('西暦', '今日');
+                        $err = str_replace($target,$replace,$error)
+                    @endphp                
+                    <span class="err_msg">{{ $err }}</span>
                 @endforeach
             </p>
             <p>
@@ -78,8 +83,8 @@ $flag = true;
                 @endif
             </p>
             <p> {{-- 変更点 5/25 --}}
-                <button type="button"  onclick="location.href='{{ route('login') }}'" class="h-10 px-6 font-semibold rounded-full bg-red-500 text-white" id="login">ログイン</button>
-                <button type="submit" id="conf" class="h-10 px-6 font-semibold rounded-full bg-indigo-600 text-white">確認画面へ</button>
+                <button type="button"  onclick="location.href='{{ route('login') }}'" class="btn-r" id="login">ログイン</button>
+                <button type="submit" id="conf" class="btn-b">確認画面へ</button>
             </p>
         </form>
     </div>
