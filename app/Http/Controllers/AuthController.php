@@ -8,13 +8,14 @@ class AuthController extends Controller
 {
     public function delivery(Request $request){
         //requestにはformで送られた値が格納されている
+        //変更点 5/25
         $this->validate($request, [
             'name' => 'required|max:50',
             'address' => 'required|max:200',
-            'tel_number' => 'required||max:13',
-            'email' => 'required|unique:users|max:50',
-            'birthday' => 'required',
-            'password' => 'required|min:8',
+            'tel_number' => 'required|digits_between:10,11|regex:/^0[0-9]{9,10}$/',
+            'email' => 'required|unique:users|max:50|email',
+            'birthday' => 'required|date_format:"Ymd"|before:today',
+            'password' => 'required|min:8|confirmed',
             'password_confirmation' => 'required|min:8',
         ]);
         $auth = new \App\Models\Auth;

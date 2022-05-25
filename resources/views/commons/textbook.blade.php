@@ -19,4 +19,4 @@
 @endforeach
 </tbody>
 </table>
-{{$stocks->links()}} --}}
+{{$stocks->links()}}

@@ -96,7 +96,6 @@ svg.w-5.h-5 {
     position: relative;
     left: 20em;
     top: -40px;
-    width: 720px;
 }
 
 #conf{
@@ -105,18 +104,27 @@ svg.w-5.h-5 {
     top: 20px;
 }
 
-#rogin{
+#login{
     position: relative;
     top: 20px;
 }
 
 #btn_ok{
     position: relative;
-    left: 10em;
+    left: 7em;
     top: 20px;
+    width: 100px;
 }
 
 #btn_hs{
     position: relative;
     top: 20px;
+}
+//変更点 5/25
+.pass{
+    display: none;
+}
+
+.err_msg{
+    color:red;
 }
