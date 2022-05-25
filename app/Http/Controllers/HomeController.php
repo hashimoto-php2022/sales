@@ -30,7 +30,7 @@ class HomeController extends Controller
         $stocks = \Auth::user()->stocks()->orderBy('created_at','desc')
                     ->paginate(5);
                     $id = \Auth::id();
-        return view('home/index', ['stocks' => $stocks , 'id' => $id ]); 
+        return view('homes/index', ['stocks' => $stocks , 'id' => $id ]); 
 
     }
     function post(Request $request , User $user){
@@ -60,7 +60,7 @@ class HomeController extends Controller
         // if(!$input){
         //     return redirect()->action("home");
         // }    
-        return view('home.confirm', ['input' => $input]);
+        return view('homes.confirm', ['input' => $input]);
 
 	}
     /**
@@ -94,7 +94,7 @@ class HomeController extends Controller
     {
         
         $user = User::find($id);
-        return view('home.show', ['user' => $user]);
+        return view('homes.show', ['user' => $user]);
     }
 
     /**
@@ -108,7 +108,7 @@ class HomeController extends Controller
         
         $user = User::find($id);
         //dd($user);
-        return view('home.edit', ['user' => $user]);
+        return view('homes.edit', ['user' => $user]);
 		//return redirect()->action("SampleFormController@confirm");
     }
 

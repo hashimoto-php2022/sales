@@ -5,14 +5,11 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\UserController as AdminUser;
 use App\Http\Controllers\Admin\StockController as AdminStock;
 use App\Http\Controllers\HomeController;
-<<<<<<< HEAD
 use App\Http\Controllers\FormController;
-=======
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\SaleController;
 
 
->>>>>>> f6e755c787a5e25e5665c332759933179cac56fc
 /*
 |--------------------------------------------------------------------------
 | Web Routes
