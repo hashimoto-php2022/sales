@@ -78,8 +78,8 @@ $flag = true;
                 @endif
             </p>
             <p> {{-- 変更点 5/25 --}}
-                <button type="button"  onclick="location.href='{{ route('login') }}'" class="h-10 px-6 font-semibold rounded-full bg-violet-600 text-white" id="login">ログイン</button>
-                <button type="submit" id="conf" class="h-10 px-6 font-semibold rounded-full bg-violet-600 text-white">確認画面へ</button>
+                <button type="button"  onclick="location.href='{{ route('login') }}'" class="h-10 px-6 font-semibold rounded-full bg-red-500 text-white" id="login">ログイン</button>
+                <button type="submit" id="conf" class="h-10 px-6 font-semibold rounded-full bg-indigo-600 text-white">確認画面へ</button>
             </p>
         </form>
     </div>
