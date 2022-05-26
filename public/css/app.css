@@ -514,11 +514,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .inline {
   display: inline;
+<<<<<<< HEAD
+=======
 
 }
 
 .ml-3{
   margin-left: 0.75rem;
+>>>>>>> ef927afe1d2f69a2343b1a1430913c791b66cade
 }
 .flex {
   display: flex;
@@ -559,6 +562,8 @@ Ensure the default browser behavior of the `hidden` attribute.
 .w-auto {
   width: auto;
 }
+<<<<<<< HEAD
+=======
 .w-32 {
   width: 8rem;
 }
@@ -569,6 +574,7 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 14rem;
 }
 
+>>>>>>> ef927afe1d2f69a2343b1a1430913c791b66cade
 .w-3\/4 {
   width: 75%;
 }
@@ -577,6 +583,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .w-1\/2 {
   width: 50%;
+}
+.w-56 {
+  width: 14rem;
+}
+.w-80 {
+  width: 20rem;
 }
 .max-w-6xl {
   max-width: 72rem;
@@ -654,34 +666,29 @@ Ensure the default browser behavior of the `hidden` attribute.
 .bg-gray-100 {
   --tw-bg-opacity: 1;
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
-}
-.bg-gray-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(107 114 128 / var(--tw-bg-opacity));
+<<<<<<< HEAD
 }
 .bg-blue-500 {
   --tw-bg-opacity: 1;
   background-color: rgb(59 130 246 / var(--tw-bg-opacity));
 }
-.bg-gray-300 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(209 213 219 / var(--tw-bg-opacity));
-}
-.bg-blue-300 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(147 197 253 / var(--tw-bg-opacity));
-}
 .bg-gray-900 {
   --tw-bg-opacity: 1;
   background-color: rgb(17 24 39 / var(--tw-bg-opacity));
+=======
+>>>>>>> ef927afe1d2f69a2343b1a1430913c791b66cade
+}
+.bg-gray-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(107 114 128 / var(--tw-bg-opacity));
 }
 .bg-violet-600 {
   --tw-bg-opacity: 1;
   background-color: rgb(124 58 237 / var(--tw-bg-opacity));
 }
-.bg-red-400 {
+.bg-gray-300 {
   --tw-bg-opacity: 1;
-  background-color: rgb(248 113 113 / var(--tw-bg-opacity));
+  background-color: rgb(209 213 219 / var(--tw-bg-opacity));
 }
 .bg-yellow-300 {
   --tw-bg-opacity: 1;
@@ -932,8 +939,11 @@ svg.w-5.h-5 {
   position: relative;
   left: 20em;
   top: -40px;
+<<<<<<< HEAD
+=======
   width: 750px;
 
+>>>>>>> ef927afe1d2f69a2343b1a1430913c791b66cade
 }
 
 #conf {
@@ -1162,11 +1172,20 @@ svg.w-5.h-5 {
   .sm\:flex-1 {
     flex: 1 1 0%;
   }
+<<<<<<< HEAD
+
+  .sm\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .sm\:items-center {
+=======
   .sm\:grid-cols-3{
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
   .sm\:items-center{
 
+>>>>>>> ef927afe1d2f69a2343b1a1430913c791b66cade
     align-items: center;
   }
 
