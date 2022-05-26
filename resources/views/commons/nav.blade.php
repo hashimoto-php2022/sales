@@ -24,4 +24,15 @@
             </script>
         </li>
     </ul>
+
+@else
+<ul class="navigation">
+    <li>
+        <a href="{{ route('register') }}">新規会員登録</a>
+    </li>
+    <li>
+        <a href="{{ route('login') }}">ログイン</a>
+    </li>
+</ul>
+
 @endif
