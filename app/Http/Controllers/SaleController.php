@@ -76,11 +76,6 @@ class SaleController extends Controller
         return view('sales.create', ['classes' => $class->get(), 'stock' => $stock]);
     }
 
-    public function create2(Classification $class, Stock $stock, Request $request)
-    {
-        return view('sales.create2', ['classes' => $class->get(), 'stock' => $stock]);
-    }
-
     public function post(CreateRequest $request)
     {
         $input = $request->only($this->createItems);
