@@ -445,6 +445,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .inline {
   display: inline;
+}
 
 .ml-3{
   margin-left: 0.75rem;
@@ -916,7 +917,7 @@ svg.w-5.h-5 {
   position: relative;
   left: 20em;
   top: -40px;
-  width: 720px;
+  width: 750px;
 }
 
 #conf {
