@@ -35,19 +35,37 @@ class HomeController extends Controller
     }
     function post(Request $request , User $user){
         
-        $this->validate($request, [
-            'name' => 'required|string',
-            'address' => 'required|string',
-            'tel_number' => 'required|string',
-            'email' => 'required|string'
-        ]);
+        $email = $request->input('email');
+        $email_conf = \Auth::user()->email;
+        if($email !== $email_conf){
+            $this->validate($request, [
+                'name' => 'required|string',
+                'address' => 'required|string',
+                'tel_number' => 'required|string',
+                'email' => 'required|string|unique:users'
+            ]);
+        }else{
+            $this->validate($request, [
+                'name' => 'required|string',
+                'address' => 'required|string',
+                'tel_number' => 'required|string',
+                'email' => 'required|string'
+            ]);
+        }
+
+        // $this->validate($request, [
+        //     'name' => 'required|string',
+        //     'address' => 'required|string',
+        //     'tel_number' => 'required|string',
+        //     'email' => 'required|string|unique:users'
+        // ]);
         $user = \Auth::id();
 
 		$input = $request->only($this->formItems);
 		
         $request->session()->put("form_input", $input);
 
-        return redirect(route('homes.confirm' , $user));
+        return redirect(route('home.confirm' , $user));
     }
 
     public function confirm(User $user , Request $request)
@@ -119,11 +137,11 @@ class HomeController extends Controller
         
                 //セッションに値が無い時はフォームに戻る
                 if(!$input){
-                    return redirect()->route("homes.edit" , \Auth::id());
+                    return redirect()->route("home.edit" , \Auth::id());
                 }
                 $user->update($input);
                 
-                return redirect(route('homes.show' , $user));
+                return redirect(route('home.show' , $user));
     }
 
     /**
@@ -136,6 +154,6 @@ class HomeController extends Controller
     {
         $user = User::find($id);
         $user->delete();
-            return redirect(route('home'));
+            return redirect(route('home.index'));
     }
 }
