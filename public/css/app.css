@@ -514,6 +514,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .inline {
   display: inline;
+
+}
+
+.ml-3{
+  margin-left: 0.75rem;
 }
 .flex {
   display: flex;
@@ -648,10 +653,13 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-bg-opacity: 1;
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
 }
+<<<<<<< HEAD
 .bg-blue-500 {
   --tw-bg-opacity: 1;
   background-color: rgb(59 130 246 / var(--tw-bg-opacity));
 }
+=======
+>>>>>>> 32dc3ad6b1b1d25923de9b6e27c723f4659bdbda
 .bg-gray-500 {
   --tw-bg-opacity: 1;
   background-color: rgb(107 114 128 / var(--tw-bg-opacity));
@@ -916,6 +924,11 @@ svg.w-5.h-5 {
   position: relative;
   left: 20em;
   top: -40px;
+<<<<<<< HEAD
+=======
+  width: 750px;
+
+>>>>>>> 32dc3ad6b1b1d25923de9b6e27c723f4659bdbda
 }
 
 #conf {
@@ -1036,10 +1049,13 @@ svg.w-5.h-5 {
   margin-top: 100px;
 }
 
+<<<<<<< HEAD
 .iro {
   color: red;
 }
 
+=======
+>>>>>>> 32dc3ad6b1b1d25923de9b6e27c723f4659bdbda
 .hover\:bg-gray-800:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(31 41 55 / var(--tw-bg-opacity));

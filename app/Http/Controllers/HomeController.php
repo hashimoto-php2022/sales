@@ -136,8 +136,12 @@ class HomeController extends Controller
                     return redirect()->route("home.edit" , \Auth::id());
                 }
                 $user->update($input);
+<<<<<<< HEAD
 
 
+=======
+                
+>>>>>>> 32dc3ad6b1b1d25923de9b6e27c723f4659bdbda
                 return redirect(route('home.show' , $user));
     }
 

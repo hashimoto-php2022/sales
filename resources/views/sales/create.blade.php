@@ -4,10 +4,9 @@
     <h1>教科書登録</h1>
     <div class="flex justify-center">
         {{-- 子要素を中央にする？ --}}
-        <form action="{{ route('sales.post') }}" method="post" id ="create" class="w-3/4">
+        <form action="{{ route('sales.post') }}" method="post" id="create" class="w-3/4">
             @csrf
             <div class="grid gap-y-2 grid-cols-1 items-center sm:grid-cols-3">
-                
                 <div class="pl-32">ISBN番号</div>
                 <div class="pl-6 col-span-2">
                     978-
@@ -65,11 +64,12 @@
                 </div>
             </div>
             <p align="center">
-                <button name="back" type="back" class="btn-b">戻る</button>
+                
                 <button type="submit" class="btn-r">確認画面へ</button>
             </p>
         </form>
     </div>
+    <a href="{{ route('sales.index') }}"><button class="btn-b">一覧へ</button></a>
     
     
 

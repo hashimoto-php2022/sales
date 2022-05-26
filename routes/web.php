@@ -57,7 +57,7 @@ Route::get('/sales/{stock}', [SaleController::class, 'show'])->name('sales.show'
 //山﨑 //変更点 5/25
 Route::group(['middleware' => ['auth']], function(){
     Route::get('/', [HomeController::class, 'index']);
-    Route::get('/home', [HomeController::class, 'index'])->name('home');
+    //Route::get('/home', [HomeController::class, 'index'])->name('home');
     Route::get('/sales', [SaleController::class, 'index'])->name('sales.index');
     //処理が重くなる（サーバーが動き続ける）
     //URLはregister_confだが、homeと一緒
