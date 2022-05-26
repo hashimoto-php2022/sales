@@ -12,41 +12,42 @@
         <div class= "pl-6 col-span-2">
             <input type="text" name="name" class="w-1/2" value="{{ old('name' , $user->name) }}" >
             @foreach($errors->get('name') as $error)
-                    {{ $error }}
+            <span class="iro">{{ $error }}</span>
                 @endforeach
-        </div><br>
+        </div>
 
         <div class="pl-32">住所</div>
         <div class= "pl-6 col-span-2">
             <input type="text" name="address" class="w-1/2" value="{{ old('address' , $user->address) }}">
             @foreach($errors->get('address') as $error)
-                    {{ $error }}
+            <span class="iro">{{ $error }}</span>
                 @endforeach
-        </div><br>
+        </div>
 
             <div class="pl-32">電話番号</div>
         <div class= "pl-6 col-span-2">
             <input type="text" name="tel_number" class="w-1/2" value="{{ old('tel_number' , $user->tel_number) }}">
             @foreach($errors->get('tel_number') as $error)
-                    {{ $error }}
+            <span class="iro">{{ $error }}</span>
                 @endforeach
-        </div><br>
+        </div>
 
         <div class="pl-32">メールアドレス</div>
         <div class= "pl-6 col-span-2">
             <input type="email" name="email" class="w-1/2" value="{{ old('email' , $user->email) }}">
             @foreach($errors->get('email') as $error)
-                    {{ $error }}
+                    <span class="iro">{{ $error }}</span>
                 @endforeach
-</div><br>
-
-
+</div>
+</div>
+</div>
+<br>
 <div class="d-flex justify-content-end">
-
+<p style="text-align:center">
         <button type="submit"class="btn-b">確認画面へ</button>
+</p>
+</div>
 
-</div>
-</div>
 
 </form>
 @endsection
