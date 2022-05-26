@@ -84,7 +84,7 @@ class SaleController extends Controller
     public function confirm(Request $request)
     {
         $input = $request->session()->get('form_input');
-        dd($input);
+        
         $class = Classification::find($input['class'])->class_name;
         return view('sales.confirm', ['input' => $input, 'class' => $class]);
     }
