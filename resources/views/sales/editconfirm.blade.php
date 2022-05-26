@@ -6,11 +6,11 @@
         @csrf
         <dl>
             <dt>教科書名</dt>
-            <dd>{{ $input['title'] }}</dd>
+            <dd>{{ $stock->subject->title }}</dd>
             <dt>著者名</dt>
-            <dd>{{ $input['author'] }}</dd>
+            <dd>{{ $stock->subject->author }}</dd>
             <dt>分類</dt>
-            <dd>{{ $class }}</dd>
+            <dd>{{ $stock->subject->classification->class_name }}</dd>
             <dt>値段</dt>
             <dd>{{ $input['price'] }}</dd>
             <dt>状態</dt>
@@ -18,9 +18,9 @@
             <dt>備考</dt>
             <dd>{{ $input['remarks'] }}</dd>
         </dl>
-        <p>
-            <input name="back" type="submit" formmethod="post" class="bg-gray-500 hover:bg-gray-800 text-white rounded px-4 py-2" value="戻る">
-            <button type="submit" class="bg-blue-500 hover:bg-gray-800 text-white rounded px-4 py-2">登録する</button>
+        <p align="center">
+            <input name="back" type="submit" formmethod="post" class="btn-b" value="戻る">
+            <button type="submit" class="btn-r">登録する</button>
         </p>
     </form>
 

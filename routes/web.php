@@ -21,11 +21,17 @@ use App\Http\Controllers\SaleController;
 |
 */
 
-//KONTA
-Route::post('home/{id}/post' , [HomeController::class, 'post'])->name('home.post');
-Route::get('home/{id}/confirm' , [HomeController::class, 'confirm'])->name('home.confirm');
-Route::patch('home/{id}' , [HomeController::class, 'update'])->name('home.update');
-Route::resource('home' , HomeController::class);
+
+
+// Route::post('/register_conf', function() { return view('auth.register_conf'); })->name('register_conf');
+//Route::post('/register_conf', [AuthController::class, 'delivery'])->name('register_conf');
+//Route::get('/home', [HomeController::class, 'index'])->name('home');
+//Route::get('/form/confirm' , [FormController::class, 'inputconfirm'])->name('inputconfirm');
+//Route::get('home/confirm', 'HomeController@edit')->middleware('auth');
+// Route::post('home/{id}/post' , [HomeController::class, 'post'])->name('home.post');
+// Route::get('home/{id}/confirm' , [HomeController::class, 'confirm'])->name('home.confirm');
+// Route::patch('home/{id}' , [HomeController::class, 'update'])->name('home.update');
+// Route::resource('home' , HomeController::class);
 
 //はしもとここから
 Route::get('/test', function() {
@@ -73,3 +79,23 @@ Route::get('/admins/stocks/{id}',[AdminStock::class, 'show'])
 ->name('stocks.show');
 Route::delete('/admins/stocks/{id}',[AdminStock::class, 'destroy'])
 ->name('stocks.destroy');
+
+Route::post('/register_conf', [AuthController::class, 'delivery'])->name('register_conf');
+
+//Route::get('/stocks', [StockController::class, 'index']);
+//Route::resource('stocks', StockController::class);
+
+// Route::post('/register_conf', function() { return view('auth.register_conf'); })->name('register_conf');
+
+Route::post('/register_conf', [AuthController::class, 'delivery'])->name('register_conf');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
+
+Route::group(['middleware' => ['auth']], function(){
+    Route::post('home/{id}/post' , [HomeController::class, 'post'])->name('home.post');
+Route::get('home/{id}/confirm' , [HomeController::class, 'confirm'])->name('home.confirm');
+Route::patch('home/{id}' , [HomeController::class, 'update'])->name('home.update');
+Route::resource('home' , HomeController::class);
+Route::delete('/destroy{id}', [HomeController::class, 'destroy'])->name('home.destroy');
+
+});
+
