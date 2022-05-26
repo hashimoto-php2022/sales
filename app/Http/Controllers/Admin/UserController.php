@@ -22,7 +22,7 @@ class UserController extends Controller
             if ($request->address) {
                 $query->where('address', 'LIKE', '%'. $request->address. '%');
             }
-        $users = $query->get();
+        $users = $query->paginate(10);
             return view('admins/users/index', ['users' => $users]);
     }
 

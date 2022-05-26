@@ -99,7 +99,7 @@ return [
     'password'             => '正しいパスワードを指定してください。',
     'present'              => ':attributeが存在していません。',
     'regex'                => ':attributeに正しい形式を指定してください。',
-    'required'             => ':attributeは必ず指定してください。',
+    'required'             => ':attributeは必ず入力してください。',
     'required_if'          => ':otherが:valueの場合、:attributeも指定してください。',
     'required_unless'      => ':otherが:valuesでない場合、:attributeを指定してください。',
     'required_with'        => ':valuesを指定する場合は、:attributeも指定してください。',
@@ -139,6 +139,8 @@ return [
     'custom' => [
         '属性名' => [
             'ルール名' => 'カスタムメッセージ',
+            'Ymd' => '西暦',
+            'today' => '今日',
         ],
     ],
 
@@ -153,6 +155,15 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'name' => '氏名',
+        'address' => '住所',
+        'tel_number' => '電話番号',
+        'email' => 'メールアドレス',
+        'birthday' => '生年月日',
+        'password' => 'パスワード',
+        'password_confirmation' => '確認用のパスワード',
+    ],
+
 
 ];

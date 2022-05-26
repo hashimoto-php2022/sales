@@ -100,7 +100,6 @@ svg.w-5.h-5 {
     position: relative;
     left: 20em;
     top: -40px;
-    width: 720px;
 }
 
 #conf{
@@ -109,22 +108,31 @@ svg.w-5.h-5 {
     top: 20px;
 }
 
-#rogin{
+#login{
     position: relative;
     top: 20px;
 }
 
 #btn_ok{
     position: relative;
-    left: 10em;
+    left: 7em;
     top: 20px;
+    width: 100px;
 }
 
 #btn_hs{
     position: relative;
     top: 20px;
 }
+//変更点 5/25
+.pass{
+    display: none;
+}
+.err_msg{
+    color:red;
+}
 .btn-b{
+
     position: relative;
     display: inline-block;
     font-weight: bold;
@@ -140,6 +148,7 @@ svg.w-5.h-5 {
     background: #668AD8;
     color: #FFF;
   }
+
   .btn-r {
     position: relative;
     display: inline-block;
@@ -156,6 +165,7 @@ svg.w-5.h-5 {
     background: #D87966;
     color: #FFF;
   }
+
   .btn-g{
     position: relative;
     display: inline-block;
@@ -188,3 +198,19 @@ svg.w-5.h-5 {
     background: #000;
     color: #FFF;
   }
+
+
+  .box1 {
+    height: 20px;
+  }
+  .box2 {
+    height: 25px;
+    margin: 10px;
+ }
+
+ .tables {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+}
+

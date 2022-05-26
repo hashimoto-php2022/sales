@@ -17,8 +17,9 @@
         <dt>備考</dt>
         <dd>{{ $stock->remarks }}</dd>
     </dl>
-    <div align="center">
-        <a href="{{ route('sales.index') }}"><button class="btn-b">教科書一覧へ</button></a>
+
+    <div style:"text-align:center">
+        <a href="{{ route('sales.index') }}"><button class="bg-gray-500 hover:bg-gray-800 text-white rounded px-4 py-2">教科書一覧へ</button></a>
         @if($stock->user_id === Auth::id())
             <a href="{{ route('sales.edit', $stock->id) }}"><button class="btn-r">編集</button></a>        
         @else

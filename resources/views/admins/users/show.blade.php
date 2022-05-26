@@ -9,6 +9,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>会員削除画面</title>
+    <style>
+        p {font-size:17px; color:red;}
+        /* .article { margin:10px; padding:6px 30px;} */
+        li {display:inline-block;}
+    </style>
 </head>
 <body>
 <dl>
@@ -32,15 +37,31 @@
         {{ $user->email }}
     </dd>
 </dl>
-
+<div align="center">
 <p>このユーザーを削除しますか？</p>
 
-<a href="{{ route('users.index') }}">キャンセル</a>
+<!-- <a href="{{ route('users.index') }}">キャンセル</a> -->
+<!-- <div align="center"> -->
+
+
+<ul>
+    <li>
+<form action="{{ route('users.index') }}" method="get">
+@csrf
+<button class="btn-flat-vertical-border" type="submit">キャンセル</button>
+</form>
+    </li>
+
+    <li>
 <form action="{{ route('users.destroy', $user->id)}}" method="post">
         @csrf
         @method('delete')
-        <button type="submit">削除</button>
+        <button class="btn-flat-vertical" type="submit">削除</button>
 </form> 
+    </li>
+</ul>
+</div>
+
 </body>
 </html>
 
