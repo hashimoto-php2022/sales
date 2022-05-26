@@ -1,5 +1,7 @@
 @extends('layouts.app')
 @section('content')
+
+<font size="5">会員情報編集</font>
 <div class="flex justify-center">
 
 <form action="{{ route('home.post' , $user->id) }}"method="post" class="w-3/4">
@@ -38,6 +40,7 @@
             @foreach($errors->get('email') as $error)
                     <span class="iro">{{ $error }}</span>
                 @endforeach
+            
 </div>
 </div>
 </div>

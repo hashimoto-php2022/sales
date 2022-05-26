@@ -36,7 +36,7 @@
                 <input type="password" name="password_confirmation" value="{{ $auth->password_confirmation }}" readonly></label>
             </p>
             <p>
-                <button type="button" onclick="history.back()" class="btn-r" id="btn_hs">キャンセル</button>
+                <button type="button" onclick="history.back()" class="btn-r" id="btn_hs">戻る</button>
                 <button type="submit" class="btn-b" id="btn_ok">OK</button>
             </p>
         </form>

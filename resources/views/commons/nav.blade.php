@@ -5,7 +5,7 @@
             <a href="{{ route('sales.create') }}">教科書登録</a>
         </li>
         <li>
-            <a href="{{ route('home') }}">マイページ</a>
+            <a href="{{ route('home.index') }}">マイページ</a>
         </li>
         <li>
             <a href="#" onclick="logout()">
@@ -24,4 +24,14 @@
             </script>
         </li>
     </ul>
+@else
+<ul class="navigation">
+    <li>
+        <a href="{{ route('register') }}">新規会員登録</a>
+    </li>
+    <li>
+        <a href="{{ route('login') }}">ログイン</a>
+    </li>
+</ul>
+
 @endif
