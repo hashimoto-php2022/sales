@@ -2,46 +2,76 @@
 
 @section('content')
     <h1>教科書登録</h1>
-    @include('commons.flash')
+    <div class="flex justify-center">
+        {{-- 子要素を中央にする？ --}}
+        <form action="{{ route('sales.post') }}" method="post" id ="create" class="w-3/4">
+            @csrf
+            <div class="grid gap-y-2 grid-cols-1 items-center sm:grid-cols-3">
+                
+                <div class="pl-32">ISBN番号</div>
+                <div class="pl-6 col-span-2">
+                    978-
+                    <input type="text" name="isbn_code" id="isbn_code" class="w-1/3" value="{{ old('isbn_code') }}">
+                    <button id="getBookInfo" class="bg-gray-900 hover:bg-gray-800 text-white rounded px-4 py-2">書籍情報取得</button>
+                    <p>@include('commons.error', ['col' => 'isbn_code'])</p> 
+                </div>
+
+                <div class="pl-32">教科書名</div>
+                <div class="px-6 col-span-2">
+                    <input type="text" name="title" id="title" class="w-1/2" value="{{ old('title') }}">
+                    @include('commons.error', ['col' => 'title'])
+                </div>
+
+                <div class="pl-32">著者名</div>
+                <div class="px-6 col-span-2">
+                    <input type="text" name="author" id="author" class="w-1/2" value="{{ old('author') }}">
+                    @include('commons.error', ['col' => 'author'])
+                </div>
+                
+                <div class="pl-32">分類</div>
+                <div class="px-6 col-span-2">
+                    <select name="class" id="class" class="border rounded w-1/2">
+                        <option value="" disabled selected>選択して下さい</option>
+                        @foreach($classes as $class)
+                            <option value="{{ $class->id }}"
+                                @if( $class->id  === (int)old('class')) selected @endif>
+                                {{ $class->class_name }}
+                            </option>
+                        @endforeach
+                    </select>
+                    @include('commons.error', ['col' => 'class'])
+                </div>
+
+                <div class="pl-32">状態</div>
+                <div class="px-6 col-span-2">
+                    <select name="status" id="status" class="border rounded w-1/2">
+                        <option value="" disabled selected>選択して下さい</option>
+                        <option value="未使用" @if("未使用" === old('status', $stock->status)) selected @endif>未使用</option>
+                        <option value="新品" @if("新品" === old('tatus', $stock->status)) selected @endif>新品</option>
+                        <option value="中古" @if("中古" === old('status', $stock->status)) selected @endif>中古</option>
+                    </select>
+                    @include('commons.error', ['col' => 'status'])
+                </div>
+
+                <div class="pl-32">希望売値</div>
+                <div class="px-6 col-span-2">
+                    <input type="text" name="price" id="price" class="w-1/2" value="{{ old('price') }}">
+                    @include('commons.error', ['col' => 'price'])
+                </div>
+
+                <div class="pl-32">備考</div>
+                <div class="px-6 col-span-2">
+                    <textarea name="remarks" id="remarks" class="w-1/2">{{ old('remarks') }}</textarea>
+                </div>
+            </div>
+            <p align="center">
+                <button name="back" type="back" class="btn-b">戻る</button>
+                <button type="submit" class="btn-r">確認画面へ</button>
+            </p>
+        </form>
+    </div>
     
-    <form action="{{ route('sales.post') }}" method="post">
-        @csrf
-        <dl>
-            <dt>ISBN番号</dt>
-            <dd>
-                978-
-                <input type="text" name="isbn_code" id="isbn_code" class="w-32" value="{{ old('isbn_code') }}">
-                <button id="getBookInfo" class="bg-gray-900 hover:bg-gray-800 text-white rounded px-4 py-2">書籍情報取得</button> 
-            </dd>
-            <dt>教科書名</dt>
-            <dd><input type="text" name="title" id="title" class="w-80" value="{{ old('title') }}"></dd>
-            <dt>著者名</dt>
-            <dd><input type="text" name="author" id="author" class="w-80" value="{{ old('author') }}"></dd>
-            <dt>分類</dt>
-            <dd><select name="class" id="class" class="w-80 border rounded">
-                @foreach($classes as $class)
-                    <option value="{{ $class->id }}"
-                        @if( $class->id  === (int)old('class')) selected @endif>
-                        {{ $class->class_name }}
-                    </option>
-                @endforeach
-            </select></dd>
-            <dt>状態</dt>
-            <dd><select name="status" id="status" class="w-80 border rounded">
-                <option value="未使用" @if("未使用" === old('status', $stock->status)) selected @endif>未使用</option>
-                <option value="新品" @if("新品" === old('tatus', $stock->status)) selected @endif>新品</option>
-                <option value="中古" @if("中古" === old('status', $stock->status)) selected @endif>中古</option>
-            </select></dd>
-            <dt>希望売値</dt>
-            <dd><input type="text" name="price" id="price" class="w-80" value="{{ old('price') }}"></dd>
-            <dt>備考</dt>
-            <dd><textarea name="remarks" id="remarks" class="w-80">{{ old('remarks') }}</textarea></dd>
-        </dl>
-        <p align="center">
-            <button type="submit" class="bg-blue-500 hover:bg-gray-800 text-white rounded px-4 py-2">確認画面へ</button>
-        </p>
-    </form>
-    <button name="back" type="back" class="bg-gray-300 hover:bg-gray-800 text-white rounded px-4 py-2">戻る</button>
+    
 
     <script>
         $(function() {
