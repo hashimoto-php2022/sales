@@ -514,6 +514,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .inline {
   display: inline;
+<<<<<<< HEAD
+=======
+
+}
+
+.ml-3{
+  margin-left: 0.75rem;
+>>>>>>> ef927afe1d2f69a2343b1a1430913c791b66cade
 }
 .flex {
   display: flex;
@@ -554,6 +562,19 @@ Ensure the default browser behavior of the `hidden` attribute.
 .w-auto {
   width: auto;
 }
+<<<<<<< HEAD
+=======
+.w-32 {
+  width: 8rem;
+}
+.w-80 {
+  width: 20rem;
+}
+.w-56 {
+  width: 14rem;
+}
+
+>>>>>>> ef927afe1d2f69a2343b1a1430913c791b66cade
 .w-3\/4 {
   width: 75%;
 }
@@ -593,6 +614,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 .justify-between {
   justify-content: space-between;
 }
+
 .gap-y-2 {
   row-gap: 0.5rem;
 }
@@ -644,6 +666,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 .bg-gray-100 {
   --tw-bg-opacity: 1;
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
+<<<<<<< HEAD
 }
 .bg-blue-500 {
   --tw-bg-opacity: 1;
@@ -652,6 +675,8 @@ Ensure the default browser behavior of the `hidden` attribute.
 .bg-gray-900 {
   --tw-bg-opacity: 1;
   background-color: rgb(17 24 39 / var(--tw-bg-opacity));
+=======
+>>>>>>> ef927afe1d2f69a2343b1a1430913c791b66cade
 }
 .bg-gray-500 {
   --tw-bg-opacity: 1;
@@ -695,6 +720,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 .pt-8 {
   padding-top: 2rem;
 }
+
 .pl-32 {
   padding-left: 8rem;
 }
@@ -913,6 +939,11 @@ svg.w-5.h-5 {
   position: relative;
   left: 20em;
   top: -40px;
+<<<<<<< HEAD
+=======
+  width: 750px;
+
+>>>>>>> ef927afe1d2f69a2343b1a1430913c791b66cade
 }
 
 #conf {
@@ -1141,12 +1172,20 @@ svg.w-5.h-5 {
   .sm\:flex-1 {
     flex: 1 1 0%;
   }
+<<<<<<< HEAD
 
   .sm\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .sm\:items-center {
+=======
+  .sm\:grid-cols-3{
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .sm\:items-center{
+
+>>>>>>> ef927afe1d2f69a2343b1a1430913c791b66cade
     align-items: center;
   }
 

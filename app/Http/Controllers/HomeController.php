@@ -47,7 +47,7 @@ class HomeController extends Controller
 		
         $request->session()->put("form_input", $input);
 
-        return redirect(route('homes.confirm' , $user));
+        return redirect(route('home.confirm' , $user));
     }
 
     public function confirm(User $user , Request $request)
@@ -123,7 +123,7 @@ class HomeController extends Controller
                 }
                 $user->update($input);
                 
-                return redirect(route('homes.show' , $user));
+                return redirect(route('home.show' , $user));
     }
 
     /**
@@ -134,6 +134,8 @@ class HomeController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user = User::find($id);
+        $user->delete();
+            return redirect(route('home'));
     }
 }

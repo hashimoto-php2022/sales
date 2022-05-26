@@ -54,11 +54,11 @@
             <input id="nozoku" type="radio" name="stock" value="1" @if("1" == request('stock')) checked @endif>在庫なしを除く
         </label>
         <label for="hukumu">
-            <input id="hukumu" type="radio" name="stock" value="2" @if("2" == request('stock')) checked @endif>在庫なしを含む
+            <input id="hukumu" type="radio" name="stock" value="2" @if("2" == request('stock')) checked @endif checked>在庫なしを含む
         </label>
+</div>
 
-
-
+<div align="center">
     <button class="btn-g" type="submit">検索</button>
 </form>
 
@@ -98,6 +98,7 @@
     @endforeach
     </tbody>
 </table>
+
 {{ $stocks->links() }}
 </div>
 @endsection
