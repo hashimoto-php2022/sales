@@ -1,4 +1,4 @@
-<table class="table">
+<table class="tables">
     <thead>
         <tr>
             <th>タイトル</th>
@@ -19,4 +19,5 @@
 @endforeach
 </tbody>
 </table>
+
 {{$stocks->links()}}
