@@ -18,4 +18,17 @@
 <a href = "{{ route('home.edit' , Auth::id()) }}" class="btn-b">編集する</a>
 </p>
 
+<form action="{{ route('home.destroy' , $user->id)}}" method="post" id="delete-form">
+    @csrf
+@method('delete')
+<button type="submit" class="btn-r" style="pitition:fixed;left: 860px;px;bottom:10px;" onclick="deleteBook()">退会</button>
+</form>
+<script type="text/javascript">
+    function deleteBook(){
+        event.preventDefault();
+        if (window.confirm('本当に退会しますか?')){
+            document.getElementById('delete-form').submit();
+        }
+    }
+    </script>
 @endsection

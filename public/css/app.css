@@ -563,6 +563,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 .w-56 {
   width: 14rem;
 }
+
 .w-3\/4 {
   width: 75%;
 }
@@ -596,6 +597,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 .justify-between {
   justify-content: space-between;
 }
+
 .gap-y-2 {
   row-gap: 0.5rem;
 }
@@ -706,6 +708,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 .pt-8 {
   padding-top: 2rem;
 }
+
 .pl-32 {
   padding-left: 8rem;
 }
@@ -1152,12 +1155,11 @@ svg.w-5.h-5 {
   .sm\:flex-1 {
     flex: 1 1 0%;
   }
-
-  .sm\:grid-cols-3 {
+  .sm\:grid-cols-3{
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
+  .sm\:items-center{
 
-  .sm\:items-center {
     align-items: center;
   }
 
