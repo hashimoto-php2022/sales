@@ -20,7 +20,8 @@ a:link {
 input[type=text],
 input[type=email],
 input[type=password],
-textarea {
+textarea,
+select {
     // width: 360px;
     padding: 8px;
     border-radius: 4px;
@@ -33,10 +34,9 @@ textarea {
     max-width: 960px;
     margin: 0 auto;
     padding: 10px;
-    
 }
 header {
-    background-color: #fef9c3;
+    background-color: #f5f5f5;
 }
 
 header .container {
@@ -60,7 +60,8 @@ table{
     border-collapse: collapse;
 }
 th {
-    color: #4169E1;
+    color: #668AD8;
+    background-color: #f5f5f5;
     font-weight: bold;
 }
 table th,
@@ -87,7 +88,10 @@ svg.w-5.h-5 {
     vertical-align: middle;
 
 }
-
+.aru {
+    color: #D87966;
+    font-weight: 200;
+}
 .title{
     font-size: 25px;
 }
@@ -96,7 +100,6 @@ svg.w-5.h-5 {
     position: relative;
     left: 20em;
     top: -40px;
-    width: 720px;
 }
 
 #conf{
@@ -105,71 +108,44 @@ svg.w-5.h-5 {
     top: 20px;
 }
 
-#rogin{
+#login{
     position: relative;
     top: 20px;
 }
 
 #btn_ok{
     position: relative;
-    left: 10em;
+    left: 7em;
     top: 20px;
+    width: 100px;
 }
 
 #btn_hs{
     position: relative;
     top: 20px;
 }
-.btn-square-shadow {
-    display: inline-block;
-    padding: 0.5em 1em;
-    text-decoration: none;
-    background: #668ad8;/*ボタン色*/
-    color: #FFF;
-    border-bottom: solid 4px #627295;
-    border-radius: 3px;
+//変更点 5/25
+.pass{
+    display: none;
+}
+.err_msg{
+    color:red;
+}
+.btn-b{
 
-  }
-  .btn-square-shadow:active {
-    /*ボタンを押したとき*/
-    -webkit-transform: translateY(4px);
-    transform: translateY(4px);/*下に動く*/
-    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);/*影を小さく*/
-    border-bottom: none;
-  }
-
-  .btn-square2 {
-    display: inline-block;
-    padding: 0.5em 1em;
-    text-decoration: none;
-    background: #FF3333;/*ボタン色*/
-    color: #FFF;
-    border-bottom: solid 4px #DD3333;
-    border-radius: 3px;
-  }
-  .btn-square2:active {
-    /*ボタンを押したとき*/
-    -webkit-transform: translateY(4px);
-    transform: translateY(4px);/*下に動く*/
-    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);/*影を小さく*/
-    border-bottom: none;
-  }
-
-  .btn-b {
     position: relative;
     display: inline-block;
     font-weight: bold;
     padding: 0.5em 1em;
     text-decoration: none;
-    border-left: solid 4px #668ad8;
-    border-right: solid 4px #668ad8;
-    color: #668ad8;
-    background: #e1f3ff;
+    border-left: solid 4px #668AD8;
+    border-right: solid 4px #668AD8;
+    color: #668AD8;
+    background: #E1F3FF;
     transition: .4s;
   }
-  
   .btn-b:hover {
-    background: #668ad8;
+    background: #668AD8;
     color: #FFF;
   }
 
@@ -179,15 +155,14 @@ svg.w-5.h-5 {
     font-weight: bold;
     padding: 0.5em 1em;
     text-decoration: none;
-    border-left: solid 4px #d87966;
-    border-right: solid 4px #d87966;
-    color: #d87966;
-    background: #e1f3ff;
+    border-left: solid 4px #D87966;
+    border-right: solid 4px #D87966;
+    color: #D87966;
+    background: #E1F3FF;
     transition: .4s;
   }
-  
   .btn-r:hover {
-    background: #d87966;
+    background: #D87966;
     color: #FFF;
   }
 
@@ -197,17 +172,33 @@ svg.w-5.h-5 {
     font-weight: bold;
     padding: 0.5em 1em;
     text-decoration: none;
-    border-left: solid 4px #6be46b;
-    border-right: solid 4px #6be46b;
-    color: #6be46b;
-    background: #e1f3ff;
+    border-left: solid 4px #6BE46B;
+    border-right: solid 4px #6BE46B;
+    color: #6BE46B;
+    background: #E1F3FF;
     transition: .4s;
   }
-  
   .btn-g:hover {
-    background: #6be46b;
+    background: #6BE46B;
     color: #FFF;
   }
+  .btn-black{
+    position: relative;
+    display: inline-block;
+    font-weight: bold;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    border-left: solid 4px #000;
+    border-right: solid 4px #000;
+    color: #000;
+    background: #eee;
+    transition: .4s;
+  }
+  .btn-black:hover {
+    background: #000;
+    color: #FFF;
+  }
+
 
   .box1 {
     height: 20px;

@@ -30,7 +30,7 @@ class HomeController extends Controller
         $stocks = \Auth::user()->stocks()->orderBy('created_at','desc')
                     ->paginate(5);
                     $id = \Auth::id();
-        return view('homes/index', ['stocks' => $stocks , 'id' => $id ]); 
+        return view('homes.index', ['stocks' => $stocks , 'id' => $id ]); 
 
     }
     function post(Request $request , User $user){
@@ -47,13 +47,12 @@ class HomeController extends Controller
 		
         $request->session()->put("form_input", $input);
 
-        return redirect(route('home.confirm' , $user));
+        return redirect(route('homes.confirm' , $user));
     }
 
     public function confirm(User $user , Request $request)
     {
         $input = $request->session()->get("form_input");
-        
         return view('homes.confirm', ['input' => $input]);
 
 	}
@@ -100,8 +99,6 @@ class HomeController extends Controller
      */
     public function edit($id)
     {
-        
-
         $user = User::find($id);
         return view('homes.edit', ['user' => $user]);
     }
@@ -115,17 +112,18 @@ class HomeController extends Controller
      */
     public function update(Request $request, User $user)
     {
+
         $user = \Auth::user();
         
         $input = $request->session()->get("form_input");
         
                 //セッションに値が無い時はフォームに戻る
                 if(!$input){
-                    return redirect()->route("home.edit" , \Auth::id());
+                    return redirect()->route("homes.edit" , \Auth::id());
                 }
                 $user->update($input);
                 
-                return redirect(route('home.show' , $user));
+                return redirect(route('homes.show' , $user));
     }
 
     /**
