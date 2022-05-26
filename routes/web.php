@@ -21,6 +21,7 @@ use App\Http\Controllers\SaleController;
 |
 */
 
+
 //KONTA
 Route::post('home/{id}/post' , [HomeController::class, 'post'])->name('home.post');
 Route::get('home/{id}/confirm' , [HomeController::class, 'confirm'])->name('home.confirm');
@@ -73,3 +74,4 @@ Route::get('/admins/stocks/{id}',[AdminStock::class, 'show'])
 ->name('stocks.show');
 Route::delete('/admins/stocks/{id}',[AdminStock::class, 'destroy'])
 ->name('stocks.destroy');
+

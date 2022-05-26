@@ -11,11 +11,18 @@ class Stock extends Model
 
     protected $fillable = ['user_id', 'subject_id', 'status', 'price', 'stock', 'remarks'];
 
-    public function user(){
+    public function user() 
+    {
         return $this->belongsTo(User::class);
     }
 
-    public function subject(){
+    public function subject() 
+    {
         return $this->belongsTo(subject::class);
+    }
+
+    public function search() 
+    {
+
     }
 }

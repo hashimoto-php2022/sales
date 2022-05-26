@@ -17,15 +17,16 @@
         <dt>備考</dt>
         <dd>{{ $stock->remarks }}</dd>
     </dl>
+
     <div style:"text-align:center">
         <a href="{{ route('sales.index') }}"><button class="bg-gray-500 hover:bg-gray-800 text-white rounded px-4 py-2">教科書一覧へ</button></a>
         @if($stock->user_id === Auth::id())
-            <a href="{{ route('sales.edit', $stock->id) }}"><button class="bg-blue-500 hover:bg-gray-800 text-white rounded px-4 py-2 ">編集</button></a>        
+            <a href="{{ route('sales.edit', $stock->id) }}"><button class="btn-r">編集</button></a>        
         @else
             @if($stock->stock == 1)
-                <a href="{{ route('sales.cart', $stock->id) }}"><button class="bg-blue-500 hover:bg-gray-800 text-white rounded px-4 py-2">購入する</button></a>
+                <a href="{{ route('sales.cart', $stock->id) }}"><button class="btn-r">購入する</button></a>
             @else
-                <button disabled="disabled" class="bg-gray-300 text-white rounded px-4 py-2 ">在庫がありません</button>
+                <button disabled="disabled" class="bg-gray-300 text-white rounded px-4 py-2">在庫がありません</button>
             @endif
         @endif
     </div>

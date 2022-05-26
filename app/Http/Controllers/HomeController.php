@@ -30,7 +30,7 @@ class HomeController extends Controller
         $stocks = \Auth::user()->stocks()->orderBy('created_at','desc')
                     ->paginate(5);
                     $id = \Auth::id();
-        return view('homes/index', ['stocks' => $stocks , 'id' => $id ]); 
+        return view('homes.index', ['stocks' => $stocks , 'id' => $id ]); 
 
     }
     function post(Request $request , User $user){
@@ -53,7 +53,6 @@ class HomeController extends Controller
     public function confirm(User $user , Request $request)
     {
         $input = $request->session()->get("form_input");
-        
         return view('homes.confirm', ['input' => $input]);
 
 	}
