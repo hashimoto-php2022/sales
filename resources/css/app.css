@@ -1,3 +1,101 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.btn-square-shadow {
+    display: inline-block;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    background: #668AD8;/*ボタン色*/
+    color: #FFF;
+    border-bottom: solid 4px #627295;
+    border-radius: 3px;
+  }
+  .btn-square-shadow:active {
+    /*ボタンを押したとき*/
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);/*下に動く*/
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);/*影を小さく*/
+    border-bottom: none;
+  }
+  .btn-square2 {
+    display: inline-block;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    background: #FF3333;/*ボタン色*/
+    color: #FFF;
+    border-bottom: solid 4px #DD3333;
+    border-radius: 3px;
+  }
+
+
+  .btn-square2:active {
+    /*ボタンを押したとき*/
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);/*下に動く*/
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);/*影を小さく*/
+    border-bottom: none;
+  }
+
+  
+  .btn-flat-vertical-border {
+    position: relative;
+    display: inline-block;
+    font-weight: bold;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    border-left: solid 4px #668AD8;
+    border-right: solid 4px #668AD8;
+    color: #668AD8;
+    background: #E1F3FF;
+    transition: .4s;
+  }
+  .btn-flat-vertical-border:hover {
+    background: #668AD8;
+    color: #FFF;
+  }
+  .btn-flat-vertical {
+    position: relative;
+    display: inline-block;
+    font-weight: bold;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    border-left: solid 4px #D87966;
+    border-right: solid 4px #D87966;
+    color: #D87966;
+    background: #E1F3FF;
+    transition: .4s;
+  }
+  .btn-flat-vertical:hover {
+    background: #D87966;
+    color: #FFF;
+  }
+  .btn-flat{
+    position: relative;
+    display: inline-block;
+    font-weight: bold;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    border-left: solid 4px #6BE46B;
+    border-right: solid 4px #6BE46B;
+    color: #6BE46B;
+    background: #E1F3FF;
+    transition: .4s;
+  }
+  .btn-flat:hover {
+    background: #6BE46B;
+    color: #FFF;
+  }
+  .box1 {
+    height: 20px;
+  }
+  .box2 {
+    height: 25px;
+    margin: 10px;
+ }
+ .tables {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+}

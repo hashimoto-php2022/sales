@@ -5,34 +5,35 @@
     <form action="{{ route('sales.index') }}" method="get">
         <dl class="search">
             <dt>教科書名</dt>
-            <dd><input type="text" name="title" id="title" value={{ request('title') }}></dd>
+            <dd><input type="text" name="title" id="title" class="w-80" value={{ request('title') }}></dd>
             <dt>著者名</dt>
-            <dd><input type="text" name="author" id="author" value={{ request('author') }}></dd>
+            <dd><input type="text" name="author" id="author" class="w-80" value={{ request('author') }}></dd>
             <dt>分類</dt>
             <dd><select name="class" id="class">
                 <option value="0" selected>全て</option>
                 @foreach($classes as $class)
-                    <option value="{{  $class->id }}""
-                        @if( $class->id  === request('class')) selected @endif>
+                    <option value="{{ $class->id }}"
+                        @if( $class->id  == request('class')) selected @endif>
                         {{ $class->class_name }}
                     </option>
                 @endforeach
             </select></dd>
             <dt>状態</dt>
             <dd><select name="status" id="status">
+                <option value="" >全て</option>
                 <option value="未使用" @if("未使用" === request('status')) selected @endif>未使用</option>
                 <option value="新品" @if("新品" === request('status')) selected @endif>新品</option>
                 <option value="中古" @if("中古" === request('status')) selected @endif>中古</option>
             </select></dd>
         </dl>
         <label for="nozoku">
-            <input type="radio" name="stock" value="1">在庫なしを除く
+            <input id="nozoku" type="radio" name="stock" value="1" @if("1" == request('stock')) checked @endif>在庫なしを除く
         </label>
         <label for="hukumu">
-            <input type="radio" name="stock" value="2" checked>在庫なしを含む
+            <input id="hukumu" type="radio" name="stock" value="2" @if("2" == request('stock')) checked @endif>在庫なしを含む
         </label>
         <p>
-            <button type="submit" class="bg-gray-900 hover:bg-gray-800 text-white rounded px-4 py-2">検索</button>
+            <button type="submit" class="btn-g">検索</button>
         </p>
 
     </form>
@@ -47,7 +48,8 @@
             }
         </script>
     </p>
-
+    <br>
+    @if($stocks->count() !=0)
     <table>
         <tr>
             <th>分類</th>
@@ -68,13 +70,17 @@
             <td>{{ $stock->status }}</td>
             <td>
                 @if( $stock->stock == 1 )
-                    有
+                    <span class="aru">○</span>
                 @else
-                    無
+                    <span class="nai">✖</span>
                 @endif
             </td>
             <td>{{ $stock->user->name }}</td>
         </tr>
         @endforeach
     </table>
+    {{ $stocks->links() }}
+    @else
+        <p>一致するデータはありませんでした</p>
+    @endif
 @endsection

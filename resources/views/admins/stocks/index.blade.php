@@ -1,10 +1,19 @@
 @extends('layouts.app')
 @section('content')
+<style>
+        
+        li {display:inline-block; margin:5px;}
+</style>
 
-
-<h1>管理者ページ</h1>
-<p>教科書一覧  <a href="{{ route('users.index') }}">会員一覧</a></p>
-
+<h1>管理者ページ：<span style="color:#668AD8">教科書一覧</span></h1>
+<ul>
+    <li>
+    <p class="btn-flat-vertical-border"><a href="{{ route('stocks.index') }}">教科書一覧</a></p>
+    </li>
+    <li>
+    <p class="btn-flat-vertical"><a href="{{ route('users.index') }}">会員一覧</a></p>
+    </li>
+</ul>
 
 <form action="{{ route('stocks.index') }}" method="get">
     <dl>
@@ -20,10 +29,12 @@
         <dd>
         <input type="text" name="name" value="{{ request('name') }}">
         </dd>
-
     </dl>
-<button type="submit">検索</button>
+
+<div align="center">
+    <button class="btn-g" type="submit">検索</button>
 </form>
+
 
 <table class="table">
     <thead>
@@ -40,11 +51,12 @@
             <td>{{ $stock->subject->title }}</td>
             <td>{{ $stock->subject->author }}</td>
             <td>{{ $stock->user->name }}</td>
-            <td><a href="{{ route('stocks.show', $stock->id) }}">削除</a>
+            <td style="color:red"><a href="{{ route('stocks.show', $stock->id) }}">削除</a>
             </td>
         </tr>
     @endforeach
     </tbody>
-</table
-
+</table>
+{{ $stocks->links() }}
+</div>
 @endsection

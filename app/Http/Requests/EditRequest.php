@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StockRequest extends FormRequest
+class EditRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,12 +24,17 @@ class StockRequest extends FormRequest
     public function rules()
     {
         return [
-            'input.' => 'required',
+            'status' => 'required',
+            'price' => 'required|integer'
         ];
     }
 
-    public function messeages()
+    public function messages()
     {
-
+        return [
+            'status.required' => '状態を選択してください',
+            'price.required' => '価格は必ず入力してください',
+            'price.integer' => '価格は整数で入力してください'
+        ];
     }
 }
