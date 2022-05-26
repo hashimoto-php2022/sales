@@ -139,6 +139,8 @@ return [
     'custom' => [
         '属性名' => [
             'ルール名' => 'カスタムメッセージ',
+            'Ymd' => '西暦',
+            'today' => '今日',
         ],
     ],
 
@@ -158,7 +160,10 @@ return [
         'address' => '住所',
         'tel_number' => '電話番号',
         'email' => 'メールアドレス',
+        'birthday' => '生年月日',
+        'password' => 'パスワード',
+        'password_confirmation' => '確認用のパスワード',
     ],
-    
+
 
 ];
