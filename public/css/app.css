@@ -485,6 +485,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 .w-56{
   width: 14rem;
 }
+.w-3\/4{
+  width: 75%;
+}
+.w-1\/2{
+  width: 50%;
+}
 .max-w-6xl{
   max-width: 72rem;
 }
@@ -508,6 +514,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .justify-between{
   justify-content: space-between;
+}
+.gap-y-2{
+  row-gap: 0.5rem;
 }
 .overflow-hidden{
   overflow: hidden;
@@ -607,6 +616,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .pt-8{
   padding-top: 2rem;
+}
+.pl-32{
+  padding-left: 8rem;
+}
+.pl-6{
+  padding-left: 1.5rem;
 }
 .text-center{
   text-align: center;
@@ -1042,6 +1057,9 @@ svg.w-5.h-5 {
   }
   .sm\:flex-1{
     flex: 1 1 0%;
+  }
+  .sm\:grid-cols-3{
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
   .sm\:items-center{
     align-items: center;
