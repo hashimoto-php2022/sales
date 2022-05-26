@@ -125,12 +125,9 @@ svg.w-5.h-5 {
 .pass{
     display: none;
 }
-
 .err_msg{
     color:red;
 }
-
-
 .btn-b{
 
     position: relative;
@@ -138,7 +135,6 @@ svg.w-5.h-5 {
     font-weight: bold;
     padding: 0.5em 1em;
     text-decoration: none;
-
     border-left: solid 4px #668ad8;
     border-right: solid 4px #668ad8;
     color: #668ad8;
@@ -163,12 +159,11 @@ svg.w-5.h-5 {
     background: #e1f3ff;
     transition: .4s;
   }
-  
+
   .btn-r:hover {
     background: #d87966;
     color: #FFF;
   }
-
 
   .btn-g{
     position: relative;
@@ -200,4 +195,4 @@ svg.w-5.h-5 {
     margin-left: auto;
     margin-right: auto;
     margin-top: 100px;
-} 
+}

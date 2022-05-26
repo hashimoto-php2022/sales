@@ -54,7 +54,6 @@ class HomeController extends Controller
     {
         $input = $request->session()->get("form_input");
         
-
         return view('homes.confirm', ['input' => $input]);
 
 	}
@@ -101,12 +100,8 @@ class HomeController extends Controller
      */
     public function edit($id)
     {
-        
-
         $user = User::find($id);
-
         return view('homes.edit', ['user' => $user]);
-
     }
 
     /**
