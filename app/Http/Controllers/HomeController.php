@@ -12,10 +12,10 @@ class HomeController extends Controller
     private $formItems = ["name", "address", "tel_number", "email"];
 
     private $validator =[
-        "name" => "required|string",
-        "address" => "required|string",
-        "tel_number" => "required|string",
-        "email" => "required|string"
+        'name' => 'required|string',
+        'address' => 'required|string',
+        'tel_number' => 'required|string',
+        'email' => 'required|string'
     ];
 
     
@@ -35,31 +35,25 @@ class HomeController extends Controller
     }
     function post(Request $request , User $user){
         
-        
-        $user = $request->input('id');
-        //dd($request);
+        $this->validate($request, [
+            'name' => 'required|string',
+            'address' => 'required|string',
+            'tel_number' => 'required|string',
+            'email' => 'required|string'
+        ]);
+        $user = \Auth::id();
+
 		$input = $request->only($this->formItems);
 		
-
-		$validator = Validator::make($input, $this->validator);
-		if($validator->fails()){
-			return redirect()->route("home.edit")
-				->withInput()
-				->withErrors($validator);
-		}
         $request->session()->put("form_input", $input);
 
-        return redirect(route('home.confirm' , $user));
+        return redirect(route('homes.confirm' , $user));
     }
 
     public function confirm(User $user , Request $request)
     {
         $input = $request->session()->get("form_input");
         
-        
-        // if(!$input){
-        //     return redirect()->action("home");
-        // }    
         return view('homes.confirm', ['input' => $input]);
 
 	}
@@ -93,6 +87,7 @@ class HomeController extends Controller
     public function show($id)
     {
         
+
         $user = User::find($id);
         return view('homes.show', ['user' => $user]);
     }
@@ -105,11 +100,8 @@ class HomeController extends Controller
      */
     public function edit($id)
     {
-        
         $user = User::find($id);
-        //dd($user);
         return view('homes.edit', ['user' => $user]);
-		//return redirect()->action("SampleFormController@confirm");
     }
 
     /**
@@ -124,16 +116,15 @@ class HomeController extends Controller
 
         $user = \Auth::user();
         
-        //$input = new User;
         $input = $request->session()->get("form_input");
         
                 //セッションに値が無い時はフォームに戻る
                 if(!$input){
-                    return redirect()->route("home.edit" , \Auth::id());
+                    return redirect()->route("homes.edit" , \Auth::id());
                 }
                 $user->update($input);
                 
-                return redirect(route('home.show' , $user));
+                return redirect(route('homes.show' , $user));
     }
 
     /**
