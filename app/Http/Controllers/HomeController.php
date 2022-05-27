@@ -35,24 +35,24 @@ class HomeController extends Controller
 
     }
     function post(Request $request , User $user){
-        $this->authorize('update',$user);
+
         $email = $request->input('email');
         $email_conf = \Auth::user()->email;
         if($email !== $email_conf){
-                $this->validate($request, [
-                    'name' => 'required|string|max:50',
-                    'address' => 'required|max:200',
-                    'tel_number' => ['required','digits_between:10,11','regex:/(^0[0-9]{9}$|^0[789]0[0-9]{8}$)/'],
-                    'email' => 'required|string|unique:users|email'
-                ]);
-        }else{
             $this->validate($request, [
                 'name' => 'required|string|max:50',
                 'address' => 'required|max:200',
                 'tel_number' => ['required','digits_between:10,11','regex:/(^0[0-9]{9}$|^0[789]0[0-9]{8}$)/'],
-                'email' => 'required|string|email'
-        ]);
-    }
+                'email' => 'required|string|unique:users|email'
+            ]);
+    }else{
+        $this->validate($request, [
+            'name' => 'required|string|max:50',
+            'address' => 'required|max:200',
+            'tel_number' => ['required','digits_between:10,11','regex:/(^0[0-9]{9}$|^0[789]0[0-9]{8}$)/'],
+            'email' => 'required|string|email'
+    ]);
+}
         $user = \Auth::id();
 
 		$input = $request->only($this->formItems);
@@ -126,7 +126,7 @@ class HomeController extends Controller
      */
     public function update(Request $request, User $user)
     {
-        $this->authorize('update',$user);
+        
         $user = \Auth::user();
         
         $input = $request->session()->get("form_input");
