@@ -16,7 +16,11 @@ mix.sass('resources/sass/app.scss',  'public/css')
     .options({ 
         processCssUrls: false, //公式ドキュメント参照
         postCss: [ tailwindcss('./tailwind.config.js') ], 
-    });
+    })
+    //push時以下2行は削除する
+    // .sass('resources/sass/hashimoto.scss', 'public/css')
+    // .styles(['public/css/app.css', 'public/css/hashimoto.css'], 'public/css/test.css')
+    ;
 if (mix.inProduction()) {
     mix.version();
 }

@@ -23,6 +23,11 @@
                 }
             </script>
         </li>
+        <li>
+            @if(Auth::user()->administrator == 1)
+                <a href="{{ route('users.index') }}">管理者</a>
+            @endif
+        </li>
     </ul>
     <li>
     @if(Auth::user()->administrator == 1)

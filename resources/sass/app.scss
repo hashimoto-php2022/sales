@@ -59,8 +59,11 @@ header .brand {
 table{
     border-collapse: collapse;
 }
-th {
+td .show{
     color: #668AD8;
+}
+th {
+    //color: #668AD8;
     background-color: #f5f5f5;
     font-weight: bold;
 }
@@ -90,7 +93,7 @@ svg.w-5.h-5 {
 }
 .aru {
     color: #D87966;
-    font-weight: 200;
+    font-weight: bold;
 }
 .title{
     font-size: 25px;
@@ -192,7 +195,7 @@ svg.w-5.h-5 {
     border-left: solid 4px #000;
     border-right: solid 4px #000;
     color: #000;
-    background: #eee;
+    background: #E1F3FF;
     transition: .4s;
   }
   .btn-black:hover {
