@@ -46,10 +46,11 @@
 
 <ul>
     <li>
-<form action="{{ route('users.index') }}" method="get">
+        <a href="{{ route('users.index') }}"><button class="btn-b">キャンセル</button></a>
+{{-- <form action="{{ route('users.index') }}" method="get">
 @csrf
 <button class="btn-b" type="submit">キャンセル</button>
-</form>
+</form> --}}
     </li>
 
     <li>
