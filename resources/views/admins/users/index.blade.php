@@ -8,10 +8,10 @@
 <h1>管理者ページ：<span style="color:#D87966">会員一覧</span></h1>
 <ul>
     <li>
-    <p class="btn-flat-vertical-border"><a href="{{ route('stocks.index') }}">教科書一覧</a></p>
+    <p class="btn-b"><a href="{{ route('stocks.index') }}">教科書一覧</a></p>
     </li>
     <li>
-    <p class="btn-flat-vertical"><a href="{{ route('users.index') }}">会員一覧</a></p>
+    <p class="btn-r"><a href="{{ route('users.index') }}">会員一覧</a></p>
     </li>
 </ul>
 

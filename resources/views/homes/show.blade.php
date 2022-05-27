@@ -14,6 +14,7 @@
     <dd>{{$user->email}}</dd>
 </dl><br>
 
+
 <p  style="text-align:center">
 <a href = "{{ route('home.edit' , Auth::id()) }}" class="btn-b">編集する</a>
 </p>
@@ -31,4 +32,5 @@
         }
     }
     </script>
+    
 @endsection
