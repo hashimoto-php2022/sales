@@ -11,7 +11,7 @@
                 <div class="pl-6 col-span-2">
                     978-
                     <input type="text" name="isbn_code" id="isbn_code" class="w-1/3" value="{{ old('isbn_code') }}">
-                    <button id="getBookInfo" class="bg-gray-900 hover:bg-gray-800 text-white rounded px-4 py-2">書籍情報取得</button>
+                    <button id="getBookInfo" class="btn-black">書籍情報取得</button>
                     <p>@include('commons.error', ['col' => 'isbn_code'])</p> 
                 </div>
 
@@ -54,7 +54,7 @@
 
                 <div class="pl-32">希望売値</div>
                 <div class="px-6 col-span-2">
-                    <input type="text" name="price" id="price" class="w-1/2" value="{{ old('price') }}">
+                    <input type="text" name="price" id="price" class="w-1/3" value="{{ old('price') }}">円
                     @include('commons.error', ['col' => 'price'])
                 </div>
 
@@ -91,7 +91,6 @@
                         let author = data[0].summary.author;
                         let trim = author.split('／');
                         let newAuthor = trim[0]; 
-
                         $("#author").val(newAuthor);
                         // $("#pubdate").val(data[0].summary.pubdate);
                         // $("#cover").val(data[0].summary.cover);

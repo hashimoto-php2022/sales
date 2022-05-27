@@ -26,11 +26,11 @@ class CreateRequest extends FormRequest
         return [
             //'input.isbn_code' => 'required|max:13',
             'isbn_code' => 'required|max:10|min:10',
-            'title' => 'required',
-            'author' => 'required',
+            'title' => 'required|max:50',
+            'author' => 'required|max:200',
             'class' => 'required',
             'status' => 'required',
-            'price' => 'required|integer'
+            'price' => 'required|regex:/^[0-9]+$/i|lte:3000'
         ];
     }
 
@@ -41,11 +41,14 @@ class CreateRequest extends FormRequest
             'isbn_code.max' => 'ISBN番号を正しく入力してください',
             'isbn_code.min' => 'ISBN番号を正しく入力してください',
             'title.required' => '教科書名は必ず入力してください',
+            'title.max' => '教科書名は50字以下で入力してください',
             'author.required' => '著者名は必ず入力してください',
+            'author.max' => '著者名は200字以下で入力してください',
             'class.required' => '分類を選択してください',
             'status.required' => '状態を選択してください',
-            'price.required' => '価格は必ず入力してください',
-            'price.integer' => '価格は整数で入力してください'
+            'price.required' => '希望売値は必ず入力してください',
+            'price.regex' => '希望売値は0以上の整数で入力してください',
+            'price.lte' => '希望売値は3000円以下で設定してください'
         ];
     }
 }

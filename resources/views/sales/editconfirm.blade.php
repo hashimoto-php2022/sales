@@ -1,28 +1,32 @@
 @extends('layouts.app')
 @section('content')
     <h1>入力情報確認</h1>
-    <form action="{{ route('sales.update', $stock->id) }}" method="post">
-        @method('patch')
-        @csrf
-        <dl>
-            <dt>教科書名</dt>
-            <dd>{{ $stock->subject->title }}</dd>
-            <dt>著者名</dt>
-            <dd>{{ $stock->subject->author }}</dd>
-            <dt>分類</dt>
-            <dd>{{ $stock->subject->classification->class_name }}</dd>
-            <dt>値段</dt>
-            <dd>{{ $input['price'] }}</dd>
-            <dt>状態</dt>
-            <dd>{{ $input['status'] }}</dd>
-            <dt>備考</dt>
-            <dd>{{ $input['remarks'] }}</dd>
-        </dl>
-        <p align="center">
-            <input name="back" type="submit" formmethod="post" class="btn-b" value="戻る">
-            <button type="submit" class="btn-r">登録する</button>
-        </p>
-    </form>
+    <div class="flex justify-center">
+        <form action="{{ route('sales.update', $stock->id) }}" method="post">
+            @method('patch')
+            @csrf
+            <div class="grid gap-y-2 grid-cols-1 items-center sm:grid-cols-3">
+                <div class="pl-32">教科書名</div>
+                <div class="pl-6 col-span-2">{{ $stock->subject->title }}</div>
+                <div class="pl-32">著者名</div>
+                <div class="pl-6 col-span-2">{{ $stock->subject->author }}</div>
+                <div class="pl-32">分類</div>
+                <div class="pl-6 col-span-2">{{ $stock->subject->classification->class_name }}</div>
+                <div class="pl-32">値段</div>
+                <div class="pl-6 col-span-2">{{ $input['price'] }}</div>
+                <div class="pl-32">状態</div>
+                <div class="pl-6 col-span-2">{{ $input['status'] }}</div>
+                <div class="pl-32">備考</div>
+                <div class="pl-6 col-span-2">{{ $input['remarks'] }}</div>
+            </div>
+            <br>
+            <p align="center">
+                <input name="back" type="submit" formmethod="post" class="btn-b" value="戻る">
+                <button type="submit" class="btn-r">登録する</button>
+            </p>
+        </form>
+    </div>
+    
 
     
 @endsection

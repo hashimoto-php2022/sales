@@ -15,22 +15,29 @@
                 <div class="pl-32">分類</div>
                 <div class="pl-6 col-span-2">{{ $stock->subject->classification->class_name }}</div>
                 <div class="pl-32">状態</div>
-                <div class="pl-6 col-span-2"><select name="status" id="status" class="w-80 border rounded">
-                    <option value="未使用" @if("未使用" === old('status', $stock->status)) selected @endif>未使用</option>
-                    <option value="新品" @if("新品" === old('tatus', $stock->status)) selected @endif>新品</option>
-                    <option value="中古" @if("中古" === old('status', $stock->status)) selected @endif>中古</option>
-                </select></div>
-                @include('commons.error', ['col' => 'price'])
+                <div class="pl-6 col-span-2">
+                    <select name="status" id="status" class="w-1/2 border rounded">
+                        <option value="未使用" @if("未使用" === old('status', $stock->status)) selected @endif>未使用</option>
+                        <option value="新品" @if("新品" === old('tatus', $stock->status)) selected @endif>新品</option>
+                        <option value="中古" @if("中古" === old('status', $stock->status)) selected @endif>中古</option>
+                    </select>
+                </div>
+                
                 <div class="pl-32">希望売値</div>
-                <div><input type="text" name="price" id="price" class="w-80" value="{{ old('price', $stock->price) }}"></div>
+                <div class="pl-6 col-span-2">
+                    <input type="text" name="price" id="price" class="w-1/2" value="{{ old('price', $stock->price) }}">
+                    @include('commons.error', ['col' => 'price'])
+                </div>
                 <div class="pl-32">備考</div>
-                <div><textarea name="remarks" id="remarks" class="w-80">{{ old('remarks', $stock->remarks) }}</textarea></div>
+                <div class="pl-6 col-span-2">
+                    <textarea name="remarks" id="remarks" class="w-1/2 ">{{ old('remarks', $stock->remarks) }}</textarea>
+                </div>
             </div>
             <p align="center">
                 <button type="submit" class="btn-r">確認画面へ</button>
             </p>
         </form>
-        <a href="{{ route('sales.show', $stock->id) }}"><button class="btn-b">キャンセル</button></a>
     </div>
+    <a href="{{ route('sales.show', $stock->id) }}"><button class="btn-b">キャンセル</button></a>
     
 @endsection

@@ -25,7 +25,7 @@ class EditRequest extends FormRequest
     {
         return [
             'status' => 'required',
-            'price' => 'required|integer'
+            'price' => 'required|regex:/^[0-9]+$/i'
         ];
     }
 
@@ -33,8 +33,8 @@ class EditRequest extends FormRequest
     {
         return [
             'status.required' => '状態を選択してください',
-            'price.required' => '価格は必ず入力してください',
-            'price.integer' => '価格は整数で入力してください'
+            'price.required' => '希望売値は必ず入力してください',
+            'price.regex' => '希望売値は0以上の整数で入力してください'
         ];
     }
 }

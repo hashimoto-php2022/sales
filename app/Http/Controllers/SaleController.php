@@ -66,6 +66,7 @@ class SaleController extends Controller
 
     public function buy(Stock $stock)
     {
+        $this->authorize($stock);
         $stock->stock = 0;
         $stock->save();
         return view('sales.finish');
@@ -97,7 +98,7 @@ class SaleController extends Controller
             return redirect(route('sales.create'))
                 ->withInput($input);
         }
-        $code = $input['isbn_code'];
+        $code = "978".$input['isbn_code'];
         if(Subject::where('isbn_code', '=', $code)->exists()) {
             //isbnコードの教科書があるとき
             $id = Subject::where('isbn_code', '=', $code)->get('id')->toArray();
