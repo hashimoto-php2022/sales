@@ -24,7 +24,6 @@
             </script>
         </li>
     </ul>
-
 @else
 <ul class="navigation">
     <li>
