@@ -25,7 +25,7 @@ class EditRequest extends FormRequest
     {
         return [
             'status' => 'required',
-            'price' => 'required|regex:/^[0-9]+$/i'
+            'price' => 'required|regex:/^[0-9]+$/i|lte:3000|gt:0'
         ];
     }
 
