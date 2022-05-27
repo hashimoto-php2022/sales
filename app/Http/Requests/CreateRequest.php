@@ -30,7 +30,7 @@ class CreateRequest extends FormRequest
             'author' => 'required|max:200',
             'class' => 'required',
             'status' => 'required',
-            'price' => 'required|regex:/^[0-9]+$/i|lte:3000'
+            'price' => 'required|regex:/^[0-9]+$/i|lte:3000|gt:0'
         ];
     }
 
