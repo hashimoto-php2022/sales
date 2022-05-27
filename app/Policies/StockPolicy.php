@@ -66,6 +66,11 @@ class StockPolicy
         return $user->id == $stock->user_id;
     }
 
+    public function buy(User $user, Stock $stock)
+    {
+        return $user->id != $stock->user_id;
+    }
+
     /**
      * Determine whether the user can delete the model.
      *

@@ -6,11 +6,12 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Stock;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Classification;
 
 class StockController extends Controller
 {
    
-   public function index(Request $request)
+   public function index(Request $request,Classification $class)
     {
         $this->authorize(Auth::user());
         $query = Stock::with(['subject.classification']);
@@ -35,9 +36,25 @@ class StockController extends Controller
         //     if ($request->name) {
         //         $query->where('name', 'LIKE', '%'. $request->name. '%');
         //     }
-        
+        if($request->class) {
+            if($request != "0") {
+                $query->whereHas('subject', function($query) use ($request) {
+                    $query->where('class_id', '=', $request->class);
+                });
+            }
+        }
+        //状態で検索
+        if($request->status) {
+            $query->whereHas('subject', function($query) use ($request) {
+                $query->where('status', '=', $request->status);
+            });
+        }
+        if($request->stock == 1) {
+            $query->where('stock', '=', 1);
+        }
+
         $stocks = $query->paginate(10);
-            return view('admins/stocks/index', ['stocks' => $stocks]);
+            return view('admins/stocks/index', ['stocks' => $stocks, 'classes' => $class->get()]);
     }
 
     public function show($id)

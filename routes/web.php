@@ -37,7 +37,7 @@ use App\Http\Controllers\SaleController;
 Route::get('/test', function() {
     return view('sales.test');
 });
-// Route::get('/sales', [SaleController::class, 'index'])->name('sales.index');
+Route::get('/sales', [SaleController::class, 'index'])->name('sales.index');
 Route::group(['middleware' => ['auth']], function() {
     //Route::resource('sales', SaleController::class);
     Route::get('/sales/create', [SaleController::class, 'create'])->name('sales.create');
@@ -58,7 +58,7 @@ Route::get('/sales/{stock}', [SaleController::class, 'show'])->name('sales.show'
 Route::group(['middleware' => ['auth']], function(){
     Route::get('/', [HomeController::class, 'index']);
     //Route::get('/home', [HomeController::class, 'index'])->name('home');
-    Route::get('/sales', [SaleController::class, 'index'])->name('sales.index');
+    //Route::get('/sales', [SaleController::class, 'index'])->name('sales.index');
     //処理が重くなる（サーバーが動き続ける）
     //URLはregister_confだが、homeと一緒
     Route::get('/register_conf', [HomeController::class, 'index']);
@@ -92,9 +92,10 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Route::group(['middleware' => ['auth']], function(){
     Route::post('home/{id}/post' , [HomeController::class, 'post'])->name('home.post');
-    Route::get('home/{id}/confirm' , [HomeController::class, 'confirm'])->name('home.confirm');
-    Route::patch('home/{id}' , [HomeController::class, 'update'])->name('home.update');
-    Route::resource('home' , HomeController::class);
-    Route::delete('/destroy{id}', [HomeController::class, 'destroy'])->name('home.destroy');
+Route::get('home/{id}/confirm' , [HomeController::class, 'confirm'])->name('home.confirm');
+//Route::patch('home/{id}' , [HomeController::class, 'update'])->name('home.update');
+Route::resource('home' , HomeController::class);
+//Route::delete('home/{id}', [HomeController::class, 'destroy'])->name('home.destroy');
+
 });
 
