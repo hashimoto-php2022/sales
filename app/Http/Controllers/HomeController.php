@@ -35,7 +35,7 @@ class HomeController extends Controller
 
     }
     function post(Request $request , User $user){
-        $this->authorize('update',$user);
+        
         $email = $request->input('email');
         $email_conf = \Auth::user()->email;
         if($email !== $email_conf){
@@ -99,7 +99,7 @@ class HomeController extends Controller
     {
         
         $user = User::find($id);
-        $this->authorize('update',$user);
+        
         return view('homes.show', ['user' => $user]);
     }
 

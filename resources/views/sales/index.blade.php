@@ -30,7 +30,7 @@
         @foreach($stocks as $stock)
         <tr>
             <td>{{ $stock->subject->classification->class_name }}</td>
-            <td><a href="{{ route('sales.show', $stock->id) }}">{{ $stock->subject->title }}</a></td>
+            <td><a href="{{ route('sales.show', $stock->id) }}"class="show">{{ $stock->subject->title }}</a></td>
             <td>{{ $stock->subject->author }}</td>
             <td>{{ $stock->price }}</td>
             <td>{{ $stock->status }}</td>
