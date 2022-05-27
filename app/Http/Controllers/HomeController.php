@@ -47,7 +47,7 @@ class HomeController extends Controller
 		
         $request->session()->put("form_input", $input);
 
-        return redirect(route('homes.confirm' , $user));
+        return redirect(route('home.confirm' , $user));
     }
 
     public function confirm(User $user , Request $request)
@@ -119,11 +119,11 @@ class HomeController extends Controller
         
                 //セッションに値が無い時はフォームに戻る
                 if(!$input){
-                    return redirect()->route("homes.edit" , \Auth::id());
+                    return redirect()->route("home.edit" , \Auth::id());
                 }
                 $user->update($input);
                 
-                return redirect(route('homes.show' , $user));
+                return redirect(route('home.show' , $user));
     }
 
     /**

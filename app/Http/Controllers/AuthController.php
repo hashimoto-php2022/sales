@@ -12,7 +12,6 @@ class AuthController extends Controller
         $this->validate($request, [
             'name' => 'required|max:50',
             'address' => 'required|max:200',
-            // 'tel_number' => 'required|digits_between:10,11|regex:/^0[0-9]{9,10}$/',
             'tel_number' => ['required','digits_between:10,11','regex:/(^0[0-9]{9}$|^0[789]0[0-9]{8}$)/'],
             'email' => 'required|unique:users|max:50|email',
             'birthday' => 'required|date_format:"Ymd"|before:today',
