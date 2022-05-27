@@ -43,11 +43,10 @@
 
 
 <div class="d-flex justify-content-end">
+</div>
 <p style="text-align:center">
         <button type="submit"class="btn-b">確認画面へ</button>
 </p>
-</div>
-
 
 </form>
 @endsection
