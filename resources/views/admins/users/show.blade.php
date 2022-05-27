@@ -48,7 +48,7 @@
     <li>
 <form action="{{ route('users.index') }}" method="get">
 @csrf
-<button class="btn-flat-vertical-border" type="submit">キャンセル</button>
+<button class="btn-b" type="submit">キャンセル</button>
 </form>
     </li>
 
@@ -56,7 +56,7 @@
 <form action="{{ route('users.destroy', $user->id)}}" method="post">
         @csrf
         @method('delete')
-        <button class="btn-flat-vertical" type="submit">削除</button>
+        <button class="btn-r" type="submit">削除</button>
 </form> 
     </li>
 </ul>
