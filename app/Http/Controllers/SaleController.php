@@ -51,6 +51,7 @@ class SaleController extends Controller
         }
         //dd($query->toSql()); //複数検索ができていない
         $stocks = $query->paginate(10);
+        //dd();
         return view('sales.index', ['stocks' => $stocks, 'classes' => $class->get()]);
     }
 

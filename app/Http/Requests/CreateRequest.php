@@ -48,7 +48,8 @@ class CreateRequest extends FormRequest
             'status.required' => '状態を選択してください',
             'price.required' => '希望売値は必ず入力してください',
             'price.regex' => '希望売値は0以上の整数で入力してください',
-            'price.lte' => '希望売値は3000円以下で設定してください'
+            'price.lte' => '希望売値は3000円以下で設定してください',
+            'price.gt' => '希望売値は1円以上で設定してください',
         ];
     }
 }

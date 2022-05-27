@@ -15,18 +15,27 @@ class SubjectSeeder extends Seeder
      */
     public function run()
     {
-        $faker = app()->make(Faker::class);
-        for($i = 1; $i <= 15; $i++) {
-            $max = pow(10, 13) - 1;
-            $rand = rand(0, $max);
-            $code = sprintf('%0'.'13'.'d', $rand);
-            $subject = new Subject([
-                'isbn_code' => $code,
-                'title' => 'サンプル教科書'.$i,
-                'class_id' => rand(1,11),
-                'author' => $faker->name
-            ]);
-            $subject->save();
-        }
+        //---ダミーデータを15個作る-----------------
+        // $faker = app()->make(Faker::class);
+        // for($i = 1; $i <= 15; $i++) {
+        //     $max = pow(10, 13) - 1;
+        //     $rand = rand(0, $max);
+        //     $code = sprintf('%0'.'13'.'d', $rand);
+        //     $subject = new Subject([
+        //         'isbn_code' => $code,
+        //         'title' => 'サンプル教科書'.$i,
+        //         'class_id' => rand(1,11),
+        //         'author' => $faker->name
+        //     ]);
+        //     $subject->save();
+        // }
+        //----------------------------------------
+
+        // $data = [
+        //     [
+        //         'isbn_code' => '',
+        //         'title' => '',
+        //     ]
+        // ]
     }
 }
