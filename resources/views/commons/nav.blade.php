@@ -1,13 +1,13 @@
 @if(Auth::check())
 
     <ul class="navigation">
-        <li>
-            <a href="{{ route('sales.create') }}">教科書登録</a>
+        <li class="hover:text-black">
+            <a href="{{ route('sales.create') }}" >教科書登録</a>
         </li>
-        <li>
+        <li class="hover:text-black">
             <a href="{{ route('home.index') }}">マイページ</a>
         </li>
-        <li>
+        <li class="hover:text-black">
             <a href="#" onclick="logout()">
                 ログアウト
             </a>
@@ -23,7 +23,7 @@
                 }
             </script>
         </li>
-        <li>
+        <li class="hover:text-black">
             @if(Auth::user()->administrator == 1)
                 <a href="{{ route('users.index') }}">管理者</a>
             @endif
@@ -31,10 +31,10 @@
     </ul>
 @else
     <ul class="navigation">
-        <li>
+        <li class="hover:text-black">
             <a href="{{ route('register') }}">新規会員登録</a>
         </li>
-        <li>
+        <li class="hover:text-black">
             <a href="{{ route('login') }}">ログイン</a>
         </li>
     </ul>

@@ -14,9 +14,20 @@ body {
 }
 h1 {
     font-size: 1.5em;
-    //border-bottom: dashed 2px #6594e0;
+    padding: 0em 0.5em;/*文字の上下 左右の余白*/
+    margin-bottom: 1.25rem;
+    color: #494949;/*文字色*/
+    border-left: solid 5px #39B2E5;/*左線*/
+    border-bottom: solid 3px #d7d7d7;/*下線*/
+    max-height: 100px;
+    width: 300px;
 }
-
+.card {
+    border-color: #ffffe0;
+}
+.stock {
+    float: right;
+}
 h3 {
     padding: 0.25em 0.5em;/*上下 左右の余白*/
     color: #494949;/*文字色*/

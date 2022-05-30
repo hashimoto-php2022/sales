@@ -8,7 +8,11 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   content: [],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+      'blue': '#39B2E5'
+      }
+    },
   },
   plugins: [],
 }

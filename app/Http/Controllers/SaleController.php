@@ -50,8 +50,7 @@ class SaleController extends Controller
         if($request->stock == 1) {
             $query->where('stock', '=', 1);
         }
-        //dd($query->toSql()); //複数検索ができていない
-        $stocks = $query->paginate(10);
+        $stocks = $query->paginate(12);
         //dd();
         return view('sales.index', ['stocks' => $stocks, 'classes' => $class->get()]);
     }
