@@ -15,8 +15,9 @@
     </li>
 </ul>
 
+<div id="form" class="p-3 rounded-lg mb-5">
 <form action="{{ route('users.index') }}" method="get">
-    <dl>
+    {{-- <dl>
         <dt>氏名</dt>
         <dd>
         <input type="text" name="name" value="{{ request('name') }}">
@@ -25,10 +26,22 @@
         <dd>
         <input type="text" name="address" value="{{ request('address') }}">
         </dd>
-    </dl>
-<div align="center">
-<button class="btn-g" type="submit">検索</button>
+    </dl> --}}
+    <table class="">
+        <tr>
+            <th>氏名</th>
+            <td><input type="text" name="name" class="w-80" value={{ request('name') }}></td>
+        </tr>
+        <tr>
+            <th>住所</th>
+            <td><input type="text" name="address" class="w-80" value={{ request('address') }}></td>
+        </tr>
+        <tr>
+    </table>
+
+<button class="btn-black mt-5" type="submit">検索</button>
 </form>
+</div>
 
 <table class="table">
     <thead>

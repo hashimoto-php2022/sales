@@ -32,7 +32,6 @@
                 </div>
                 <div class=" text-left">備考</div>
                 <div class="sm:col-span-2 text-left">{{ $stock->remarks }}</div>
-            </div>        
         </div>
         <div align="center" class="mt-5">
             <p>

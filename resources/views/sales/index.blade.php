@@ -2,7 +2,7 @@
 @section('content')
 <div class="flex justify-center">
     <div class="">
-    <h1>教科書出品一覧</h1>
+    <h1>検索条件</h1>
     <div id="form" class="p-3 rounded-lg">
         @include('commons.stockform')
         <p>
@@ -18,6 +18,7 @@
         </p>
     </div>
     @if($stocks->count() !=0)
+    <h1 class="mt-3">出品一覧</h1>
         @include('sales.card')
     {{ $stocks->links() }}
     @else

@@ -1,6 +1,6 @@
 <div class="container px-20">
 
-    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 pt-2 pb-10 lg:pb-20 " style="cursor: auto;">
+    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 pb-10 lg:pb-20 " style="cursor: auto;">
         @foreach ($stocks as $stock)
         <a href="{{ route('sales.show', $stock->id) }}">        
             <div class="card p-6 bg-white rounded-lg border-2 hover:border-blue h-full grid grid-cols-1">

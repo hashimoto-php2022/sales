@@ -4,7 +4,6 @@
 <div class="flex justify-center">
     <div class="w-3/4">
     <h1>教科書登録</h1>
-        {{-- 子要素を中央にする？ --}}
         <form action="{{ route('sales.post') }}" method="post" enctype='multipart/form-data' id="create" class="bg-white rounded-lg p-3">
             @csrf
             <div class="grid gap-y-2 grid-cols-1 items-center sm:grid-cols-3">
@@ -89,7 +88,6 @@
                 e.preventDefault();
                 const isbn = 978+$("#isbn_code").val();
                 const url = "https://api.openbd.jp/v1/get?isbn=" + isbn;
-
                 $.getJSON( url, function( data ) {
                     if( data[0] == null ) {
                         alert("データが見つかりません");
