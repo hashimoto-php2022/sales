@@ -30,14 +30,13 @@ class UserController extends Controller
     {
         $this->authorize(Auth::user());
         $user=User::find($id);
-            return view('admins/users/show', ['user' => $user]);
+        return view('admins/users/show', ['user' => $user]);
     }
 
     public function destroy($id)
     {
-     
         $user=User::find($id);
-       $user->delete();
-            return redirect(route('users.index'));
+        $user->delete();
+        return redirect(route('users.index'));
     }
 }

@@ -4,7 +4,7 @@
 @php
 $flag = true;    
 @endphp
-    <script> //会員登録の警告文の処理 //変更点(5/25)
+    <script> //会員登録の警告文の処理
         window.addEventListener('load', function() {
             if(!sessionStorage.getItem('w_text')) {
                 sessionStorage.setItem('w_text', 'on');
@@ -28,7 +28,7 @@ $flag = true;
                 @endforeach
             </p>
             <p>
-                <label>住所<br> {{-- 変更点 5/25 --}}
+                <label>住所<br>
                 <input type="text" name="address" value="{{ old('address') }}" placeholder="東京都新宿区西新宿2-8-1"></label>
                 @foreach($errors->get('address') as $error)
                     <span class="err_msg">{{ $error }}</span>
@@ -82,7 +82,7 @@ $flag = true;
                     <span class="pass">※8文字以上で記述して下さい！</span>
                 @endif
             </p>
-            <p> {{-- 変更点 5/25 --}}
+            <p>
                 <button type="button"  onclick="location.href='{{ route('login') }}'" class="btn-r" id="login">ログイン</button>
                 <button type="submit" id="conf" class="btn-b">確認画面へ</button>
             </p>
