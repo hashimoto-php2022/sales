@@ -12,7 +12,8 @@
 <body>
     <header>
         <div class="container">
-            <a class="brand" href="{{ route('sales.index') }}">TOP</a>
+            {{-- <a class="brand" href="{{ route('sales.index') }}">TOP</a> --}}
+            <a class="brand hover:text-blue" href="{{ route('sales.index') }}">TOP</a>
             @include('commons.nav')
         </div>
     </header>

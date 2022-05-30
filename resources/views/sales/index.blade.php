@@ -14,7 +14,8 @@
         </script>
     </p>
     <br>
-    @if($stocks->count() !=0)
+    @include('sales.card')
+    {{-- @if($stocks->count() !=0)
     <table>
         <tr>
             <th>分類</th>
@@ -47,5 +48,5 @@
     {{ $stocks->links() }}
     @else
         <p>一致するデータはありませんでした</p>
-    @endif
+    @endif --}}
 @endsection
