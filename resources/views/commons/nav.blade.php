@@ -29,19 +29,13 @@
             @endif
         </li>
     </ul>
-    <li>
-    @if(Auth::user()->administrator == 1)
-        <a href="{{ route('users.index') }}">管理者</a>
-    @endif
-</li>
 @else
-<ul class="navigation">
-    <li>
-        <a href="{{ route('register') }}">新規会員登録</a>
-    </li>
-    <li>
-        <a href="{{ route('login') }}">ログイン</a>
-    </li>
-</ul>
-
+    <ul class="navigation">
+        <li>
+            <a href="{{ route('register') }}">新規会員登録</a>
+        </li>
+        <li>
+            <a href="{{ route('login') }}">ログイン</a>
+        </li>
+    </ul>
 @endif

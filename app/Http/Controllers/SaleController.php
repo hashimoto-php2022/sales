@@ -4,15 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Classification;
 use App\Models\Stock;
 use App\Models\Subject;
-use App\Models\Classification;
+use App\Models\History;
 use App\Http\Requests\CreateRequest;
 use App\Http\Requests\EditRequest;
 
 class SaleController extends Controller
 {
-    private $createItems = ['isbn_code', 'title', 'author', 'class', 'status', 'price', 'remarks'];
+    private $createItems = ['isbn_code', 'title', 'author', 'class', 'status', 'price', 'remarks', 'image'];
     private $editItems = ['status', 'price', 'remarks'];
 
     public function index(Stock $stock, Subject $subject, Classification $class, Request $request)
@@ -57,7 +58,7 @@ class SaleController extends Controller
 
     public function show(Stock $stock)
     {
-        return view('sales.show', ['stock' => $stock]);
+        return view('sales.show_hashimoto', ['stock' => $stock]);
     }
 
     public function cart(Stock $stock)
@@ -65,11 +66,14 @@ class SaleController extends Controller
         return view('sales.cart', ['stock' => $stock]);
     }
 
-    public function buy(Stock $stock)
+    public function buy(Stock $stock, History $history)
     {
         $this->authorize($stock);
         $stock->stock = 0;
         $stock->save();
+        $history->user_id = Auth::id();
+        $history->stock_id = $stock->id;
+        $history->save();
         return view('sales.finish');
     }
 
@@ -109,6 +113,7 @@ class SaleController extends Controller
             $stock->price = $input['price'];
             $stock->stock = 1;
             $stock->remarks = $input['remarks'];
+            
             $stock->save();
         } else {
             //isbnコードの教科書がないとき
@@ -116,6 +121,12 @@ class SaleController extends Controller
             $subject->title = $input['title'];
             $subject->author = $input['author'];
             $subject->class_id = $input['class'];
+            //画像保存を行う
+            $image_url = $input['image'];
+            $file_name = time();
+            $file_path = storage_path('app/public/'.$file_name.".jpg");
+            \Image::make($image_url)->save($file_path);
+            $subject->image = basename($file_path);
             $subject->save();
 
             $stock->user_id = Auth::id();
