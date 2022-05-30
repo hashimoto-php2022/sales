@@ -61,13 +61,13 @@ class StockController extends Controller
     {
         $this->authorize(Auth::user());
         $stock=Stock::find($id);
-            return view('admins/stocks/show', ['stock' => $stock]);
+        return view('admins/stocks/show', ['stock' => $stock]);
     }
 
     public function destroy($id)
     {
         $stock=Stock::find($id);
-       $stock->delete();
-            return redirect(route('stocks.index'));
+        $stock->delete();
+        return redirect(route('stocks.index'));
     }
 }

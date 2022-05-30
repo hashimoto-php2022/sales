@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="/css/app.css">
     <title>{{ config('app.name') }}</title>
-    <script> //会員登録の警告文の処理 //変更点 5/25
+    <script> //会員登録の警告文の処理
         window.addEventListener('load', function() {
             sessionStorage.removeItem('w_text');
         });
