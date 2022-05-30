@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use App\Models\History;
 use Validator;
 
 class HomeController extends Controller
@@ -149,5 +150,12 @@ class HomeController extends Controller
         $user = User::find($id);
         $user->delete();
             return redirect(route('home.index'));
+    }
+
+    public function history(User $user, History $history, $id)
+    {
+        $histories = History::where('user_id', '=', $id)->get();
+        //dd($histories);
+        return view('homes.history', ['histories' => $histories]);
     }
 }

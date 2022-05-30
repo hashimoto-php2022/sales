@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use App\Models\Stock;
 
 class StockSeeder extends Seeder
 {
@@ -13,29 +14,16 @@ class StockSeeder extends Seeder
      */
     public function run()
     {
-        $data = [
-            [
-                'user_id' => '1',
-                'subject_id' => '1',
-                'status' => '未使用',
-                'price' => '3000',
-                'stock' => '1',
-            ],
-            [
-                'user_id' => '1',
-                'subject_id' => '2',
-                'status' => '新品',
-                'price' => '2500',
-                'stock' => '1',
-            ],
-            [
-                'user_id' => '3',
-                'subject_id' => '2',
-                'status' => '中古',
-                'price' => '500',
-                'stock' => '0',
-            ],
-        ];
-        \DB::table('stocks')->insert($data);
+        $status = ['未使用', '新品', '中古'];
+        for($i = 1; $i <= 15; $i++) {
+            $stock = new Stock([
+                'user_id' => rand(1, 3),
+                'subject_id' => rand(1, 6),
+                'status' => $status[rand(0, 2)],
+                'price' => rand(1, 10) * 100,
+                'stock' => rand(0, 1),
+            ]);
+            $stock->save();
+        }
     }
 }

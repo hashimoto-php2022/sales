@@ -46,9 +46,13 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-
-
-    public function stocks(){
+    public function stocks() 
+    {
         return $this->hasMany(Stock::class);
+    }
+
+    public function histories() 
+    {
+        return $this->hasMany(History::class);
     }
 }
