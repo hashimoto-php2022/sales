@@ -17,7 +17,7 @@ $flag = true;
 </head>
 <body>
     <h1 class="title">新規会員登録</h1>
-    <div class="main">
+    <div class="main mt-12">
         <form action="{{ route('register_conf') }}" method="post">
             @csrf
             <p>

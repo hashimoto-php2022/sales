@@ -14,7 +14,10 @@
 </p><br>
 
 <h3 style="">自分の出品している教科書</h3>
+@if($stocks->count() == 0)
+    <p>まだ出品していません</p>
+@endif
 @include('sales/card')
-{{-- @include('commons/textbook') --}}
+
 
 @endsection
