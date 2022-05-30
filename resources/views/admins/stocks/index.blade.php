@@ -14,8 +14,11 @@
     <p class="btn-r"><a href="{{ route('users.index') }}">会員一覧</a></p>
     </li>
 </ul>
+<div id="form" class="p-3 rounded-lg mb-5">
+@include('commons.stockform')
+</div>
 
-<form action="{{ route('stocks.index') }}" method="get">
+{{-- <form action="{{ route('stocks.index') }}" method="get">
     <dl>
         <dt>タイトル</dt>
         <dd>
@@ -60,7 +63,7 @@
 
 <div align="center">
     <button class="btn-g" type="submit">検索</button>
-</form>
+</form> --}}
 
 
 <table class="table">
