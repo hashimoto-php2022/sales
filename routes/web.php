@@ -21,20 +21,10 @@ use App\Http\Controllers\SaleController;
 |
 */
 
-//Route::post('/register_conf', function() { return view('auth.register_conf'); })->name('register_conf');
-//Route::post('/register_conf', [AuthController::class, 'delivery'])->name('register_conf');
-//Route::get('/home', [HomeController::class, 'index'])->name('home');
-//Route::get('/form/confirm' , [FormController::class, 'inputconfirm'])->name('inputconfirm');
-//Route::get('home/confirm', 'HomeController@edit')->middleware('auth');
-// Route::post('home/{id}/post' , [HomeController::class, 'post'])->name('home.post');
-// Route::get('home/{id}/confirm' , [HomeController::class, 'confirm'])->name('home.confirm');
-// Route::patch('home/{id}' , [HomeController::class, 'update'])->name('home.update');
-// Route::resource('home' , HomeController::class);
-
-//はしもとここから
-Route::get('/test', function() {
-    return view('sales.test');
-});
+//橋本
+// Route::get('/test', function() {
+//     return view('sales.test');
+// });
 Route::get('/sales', [SaleController::class, 'index'])->name('sales.index');
 Route::group(['middleware' => ['auth']], function() {
     //Route::resource('sales', SaleController::class);
@@ -50,43 +40,31 @@ Route::group(['middleware' => ['auth']], function() {
     Route::post('/sales/{stock}/buy', [SaleController::class, 'buy'])->name('sales.buy');
 });
 Route::get('/sales/{stock}', [SaleController::class, 'show'])->name('sales.show');
-//ここまで
+
 
 //山﨑
 Route::group(['middleware' => ['auth']], function(){
     Route::get('/', [HomeController::class, 'index']);
-    //Route::get('/home', [HomeController::class, 'index'])->name('home');
-    //Route::get('/sales', [SaleController::class, 'index'])->name('sales.index');
-    //処理が重くなる（サーバーが動き続ける）
     //URLはregister_confだが、homeと一緒
     Route::get('/register_conf', [HomeController::class, 'index']);
 });
 Route::post('/register_conf', [AuthController::class, 'delivery'])->name('register_conf');
 
-//IKEGAWA
-Route::get('/admins/users',[AdminUser::class, 'index'])
-->name('users.index');
-Route::get('/admins/users/{id}',[AdminUser::class, 'show'])
-->name('users.show');
-Route::delete('/admins/users/{id}',[AdminUser::class, 'destroy'])
-->name('users.destroy');
 
-Route::get('/admins/stocks',[AdminStock::class, 'index'])
-->name('stocks.index');
-Route::get('/admins/stocks/{id}',[AdminStock::class, 'show'])
-->name('stocks.show');
-Route::delete('/admins/stocks/{id}',[AdminStock::class, 'destroy'])
-->name('stocks.destroy');
+//池川
+Route::get('/admins/users',[AdminUser::class, 'index'])->name('users.index');
+Route::get('/admins/users/{id}',[AdminUser::class, 'show'])->name('users.show');
+Route::delete('/admins/users/{id}',[AdminUser::class, 'destroy'])->name('users.destroy');
 
-Route::post('/register_conf', [AuthController::class, 'delivery'])->name('register_conf');
-Route::post('/register_conf', [AuthController::class, 'delivery'])->name('register_conf');
+Route::get('/admins/stocks',[AdminStock::class, 'index'])->name('stocks.index');
+Route::get('/admins/stocks/{id}',[AdminStock::class, 'show'])->name('stocks.show');
+Route::delete('/admins/stocks/{id}',[AdminStock::class, 'destroy'])->name('stocks.destroy');
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
+
+//紺田
 Route::group(['middleware' => ['auth']], function(){
     Route::post('home/{id}/post' , [HomeController::class, 'post'])->name('home.post');
-Route::get('home/{id}/confirm' , [HomeController::class, 'confirm'])->name('home.confirm');
-//Route::patch('home/{id}' , [HomeController::class, 'update'])->name('home.update');
-Route::resource('home' , HomeController::class);
-//Route::delete('home/{id}', [HomeController::class, 'destroy'])->name('home.destroy');
-
+    Route::get('home/{id}/confirm' , [HomeController::class, 'confirm'])->name('home.confirm');
+    Route::resource('home' , HomeController::class);
 });
