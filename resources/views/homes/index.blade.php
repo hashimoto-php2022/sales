@@ -1,18 +1,20 @@
 @extends('layouts.app')
 @section('content')
 
-<font size="5">マイページ</font>
-<br><br>
+<h1>マイページ</h1>
+
 
 <p style="text-align:center">
     <a href="{{ route('home.show' , $id ) }}" class="btn-b">会員情報</a>
 
-    <a href="{{ route('sales.create') }}" class="btn-r">教科書登録</a>
+    <a href="{{ route('sales.create') }}" class="btn-black">教科書登録</a>
 
-    <a href="{{ route('sales.index') }}" class="btn-g" >教科書一覧</a>
+    <a href="{{ route('home.history', $id) }}" class="btn-g">購入履歴</a>
+    
+</p><br>
 
-</p>
-
-@include('commons/textbook')
+<h3 style="">自分の出品している教科書</h3>
+@include('sales/card')
+{{-- @include('commons/textbook') --}}
 
 @endsection

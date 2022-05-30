@@ -91,10 +91,12 @@ Route::post('/register_conf', [AuthController::class, 'delivery'])->name('regist
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Route::group(['middleware' => ['auth']], function(){
+    Route::get('home/{id}/history', [HomeController::class, 'history'])->name('home.history');
     Route::post('home/{id}/post' , [HomeController::class, 'post'])->name('home.post');
-    Route::get('home/{id}/confirm' , [HomeController::class, 'confirm'])->name('home.confirm');
-    Route::patch('home/{id}' , [HomeController::class, 'update'])->name('home.update');
-    Route::resource('home' , HomeController::class);
-    Route::delete('/destroy{id}', [HomeController::class, 'destroy'])->name('home.destroy');
+Route::get('home/{id}/confirm' , [HomeController::class, 'confirm'])->name('home.confirm');
+//Route::patch('home/{id}' , [HomeController::class, 'update'])->name('home.update');
+Route::resource('home' , HomeController::class);
+//Route::delete('home/{id}', [HomeController::class, 'destroy'])->name('home.destroy');
+
 });
 

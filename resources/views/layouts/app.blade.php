@@ -12,15 +12,15 @@
 <body>
     <header>
         <div class="container">
-            <a class="brand" href="{{ route('sales.index') }}">TOP</a>
+            <a class="brand hover:text-black" href="{{ route('sales.index') }}">TOP</a>
             @include('commons.nav')
         </div>
     </header>
     <main>
         <div class="container">
-            {{-- <div class="justify-center"> --}}
+            
                 @yield('content')
-            {{-- </div> --}}
+            
         </div>
     </main>
 </body>

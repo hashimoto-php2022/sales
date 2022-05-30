@@ -21,8 +21,8 @@ class Stock extends Model
         return $this->belongsTo(subject::class);
     }
 
-    public function search() 
+    public function history() 
     {
-
+        return $this->belongsTo(History::class);
     }
 }
