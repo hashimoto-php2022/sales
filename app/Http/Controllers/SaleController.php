@@ -57,7 +57,7 @@ class SaleController extends Controller
 
     public function show(Stock $stock)
     {
-        return view('sales.show_hashimoto', ['stock' => $stock]);
+        return view('sales.show', ['stock' => $stock]);
     }
 
     public function cart(Stock $stock)
