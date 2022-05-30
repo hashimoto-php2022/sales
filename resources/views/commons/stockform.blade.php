@@ -1,5 +1,4 @@
 <form action="{{ route('sales.index') }}" method="get" >
-    <h3 class="mb-3">  条件の指定</h3>
     <table class="">
         <tr>
             <th>教科書名</th>
