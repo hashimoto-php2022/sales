@@ -17,51 +17,11 @@
             </script>
         </p>
     </div>
-
-    @include('sales.card')
-
-    <br>
-    @include('sales.card')
-    {{-- @if($stocks->count() !=0)
-    <table>
-        <tr>
-            <th>分類</th>
-            <th>教科書名</th>
-            <th>著者名</th>
-            <th>価格</th>
-            <th>状態</th>
-            <th>在庫</th>
-            <th>出品者</th>
-        </tr>
-
-        @foreach($stocks as $stock)
-        <tr>
-            <td>{{ $stock->subject->classification->class_name }}</td>
-            <td><a href="{{ route('sales.show', $stock->id) }}" class="show">{{ $stock->subject->title }}</a></td>
-            <td>{{ $stock->subject->author }}</td>
-            <td>{{ $stock->price }}</td>
-            <td>{{ $stock->status }}</td>
-            <td>
-                @if( $stock->stock == 1 )
-                    <span class="aru">〇</span>
-                @else
-                    <span class="nai">✖</span>
-                @endif
-            </td>
-            <td>{{ $stock->user->name }}</td>
-        </tr>
-        @endforeach
-    </table>
+    @if($stocks->count() !=0)
+        @include('sales.card')
     {{ $stocks->links() }}
     @else
         <p>一致するデータはありませんでした</p>
-<<<<<<< HEAD
-    @endif --}}
-@endsection
-=======
     @endif
 </div>
-</div>
-    
 @endsection
->>>>>>> f719d1cc56045708abecdbe71401f06186d08a2f
