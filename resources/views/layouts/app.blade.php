@@ -18,9 +18,9 @@
     </header>
     <main>
         <div class="container">
-            {{-- <div class="justify-center"> --}}
+            <div class="justify-center">
                 @yield('content')
-            {{-- </div> --}}
+            </div>
         </div>
     </main>
 </body>

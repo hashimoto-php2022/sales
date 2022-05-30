@@ -548,8 +548,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .w-5 {
   width: 1.25rem;
 }
-
-
 .w-3\/4 {
   width: 75%;
 }
@@ -562,7 +560,15 @@ Ensure the default browser behavior of the `hidden` attribute.
 .w-80 {
   width: 20rem;
 }
-
+.w-8 {
+  width: 2rem;
+}
+.w-auto {
+  width: auto;
+}
+.max-w-xl {
+  max-width: 36rem;
+}
 .max-w-6xl {
   max-width: 72rem;
 }
@@ -629,12 +635,22 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
-
 .bg-gray-500 {
   --tw-bg-opacity: 1;
   background-color: rgb(107 114 128 / var(--tw-bg-opacity));
 }
-
+.bg-gray-300 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(209 213 219 / var(--tw-bg-opacity));
+}
+.bg-gray-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(243 244 246 / var(--tw-bg-opacity));
+}
+.bg-blue-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(59 130 246 / var(--tw-bg-opacity));
+}
 .p-6 {
   padding: 1.5rem;
 }
@@ -1005,6 +1021,18 @@ svg.w-5.h-5 {
 
 .iro {
   color: red;
+}
+
+#btn_login {
+  position: relative;
+  top: 20px;
+  left: 30px;
+}
+
+#btn_register {
+  position: relative;
+  top: 20px;
+  right: 40px;
 }
 
 .hover\:bg-gray-800:hover {
