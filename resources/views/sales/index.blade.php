@@ -1,18 +1,25 @@
 @extends('layouts.app')
 @section('content')
+<div class="flex justify-center">
+    <div class="">
     <h1>教科書出品一覧</h1>
-    @include('commons.stockform')
-    <p>
-        <button onclick="reset()">検索条件をリセットする</button>
-        <script type="text/javascript">
-            function reset() {
-                var url = new URL(window.location.href);
-                var params = url.searchParams;
-                history.replaceState('', '', url.pathname);
-                location.reload()
-            }
-        </script>
-    </p>
+    <div id="form" class="p-3 rounded-lg">
+        @include('commons.stockform')
+        <p>
+            <button onclick="reset()">検索条件をリセットする</button>
+            <script type="text/javascript">
+                function reset() {
+                    var url = new URL(window.location.href);
+                    var params = url.searchParams;
+                    history.replaceState('', '', url.pathname);
+                    location.reload()
+                }
+            </script>
+        </p>
+    </div>
+
+    @include('sales.card')
+
     <br>
     @include('sales.card')
     {{-- @if($stocks->count() !=0)
@@ -48,5 +55,13 @@
     {{ $stocks->links() }}
     @else
         <p>一致するデータはありませんでした</p>
+<<<<<<< HEAD
     @endif --}}
 @endsection
+=======
+    @endif
+</div>
+</div>
+    
+@endsection
+>>>>>>> f719d1cc56045708abecdbe71401f06186d08a2f

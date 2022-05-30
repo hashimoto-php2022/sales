@@ -9,6 +9,8 @@
                 <div class="pl-6 col-span-2">{{ $input['title'] }}</div>
                 <div class="pl-32">著者名</div>
                 <div class="pl-6 col-span-2">{{ $input['author'] }}</div>
+                <div class="pl-32">画像プレビュー</div>
+                <div class="pl-6 col-span-2"><img src="{{ $input['image'] }}" alt=""></div>
                 <div class="pl-32">分類</div>
                 <div class="pl-6 col-span-2">{{ $class }}</div>
                 <div class="pl-32">値段</div>

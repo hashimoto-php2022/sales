@@ -10,10 +10,25 @@ body {
     margin: 0;
     padding: 0;
     font-size: 1rem;
+    background-color: #F5F5F5;
 }
 h1 {
     font-size: 1.5em;
+    //border-bottom: dashed 2px #6594e0;
 }
+
+h3 {
+    padding: 0.25em 0.5em;/*上下 左右の余白*/
+    color: #494949;/*文字色*/
+    background: transparent;/*背景透明に*/
+    border-left: solid 5px #39B2E5;/*左線*/
+}
+#form {
+    background-color: #FFF;
+    width: 500px;
+    // border: double 5px white;
+}
+
 a:link {
     text-decoration: none;
 }
@@ -36,7 +51,9 @@ textarea {
     padding: 10px;
 }
 header {
-    background-color: #f5f5f5;
+    background-color: #39B2E5;
+    //background-color: #D87966;
+    color: #fff;
 }
 
 header .container {
@@ -64,8 +81,12 @@ td .show {
 }
 th {
     //color: #668AD8;
-    background-color: #f5f5f5;
+    //background-color: #fff;
+    background-color: #ffffe0;
     font-weight: bold;
+}
+td {
+    background-color: #FFF;
 }
 table th,
 table td {
@@ -145,7 +166,8 @@ svg.w-5.h-5 {
     border-left: solid 4px #668AD8;
     border-right: solid 4px #668AD8;
     color: #668AD8;
-    background: #E1F3FF;
+    //background: #E1F3FF;
+    background-color: #ffffe0;
     transition: .4s;
   }
   .btn-b:hover {
@@ -162,7 +184,8 @@ svg.w-5.h-5 {
     border-left: solid 4px #D87966;
     border-right: solid 4px #D87966;
     color: #D87966;
-    background: #E1F3FF;
+    //background: #E1F3FF;
+    background-color: #ffffe0;
     transition: .4s;
   }
   .btn-r:hover {
@@ -179,7 +202,9 @@ svg.w-5.h-5 {
     border-left: solid 4px #6BE46B;
     border-right: solid 4px #6BE46B;
     color: #6BE46B;
-    background: #E1F3FF;
+    //background: #E1F3FF;
+
+    background-color: #ffffe0;
     transition: .4s;
   }
   .btn-g:hover {
@@ -195,7 +220,9 @@ svg.w-5.h-5 {
     border-left: solid 4px #000;
     border-right: solid 4px #000;
     color: #000;
-    background: #E1F3FF;
+    //background: #E1F3FF;
+    background-color: #ffffe0;
+    //background-color: #e6f7ff;
     transition: .4s;
   }
   .btn-black:hover {
@@ -215,7 +242,7 @@ svg.w-5.h-5 {
  .tables {
     margin-left: auto;
     margin-right: auto;
-    margin-top: 100px;
+    //margin-top: 100px;
 }
 .iro{
     color: red;

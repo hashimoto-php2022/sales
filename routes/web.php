@@ -64,6 +64,7 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 //紺田
 Route::group(['middleware' => ['auth']], function(){
+    Route::get('home/{id}/history', [HomeController::class, 'history'])->name('home.history');
     Route::post('home/{id}/post' , [HomeController::class, 'post'])->name('home.post');
     Route::get('home/{id}/confirm' , [HomeController::class, 'confirm'])->name('home.confirm');
     Route::resource('home' , HomeController::class);
