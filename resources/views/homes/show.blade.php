@@ -1,36 +1,38 @@
 @extends('layouts.app')
 
 @section('content')
-<font size="5">会員情報</font>
-@csrf
-<dl style="text-align:center">
-    <dt>名前</dt>
-    <dd>{{$user->name}}</dd>
-    <dt>住所</dt>
-    <dd>{{$user->address}}</dd>
-    <dt>電話番号</dt>
-    <dd>{{$user->tel_number}}</dd>
-    <dt>メールアドレス</dt>
-    <dd>{{$user->email}}</dd>
-</dl><br>
-
-
-<p  style="text-align:center">
-<a href = "{{ route('home.edit' , Auth::id()) }}" class="btn-b">編集する</a>
-</p>
-
-<form action="{{ route('home.destroy' , $user->id)}}" method="post" id="delete-form">
-    @csrf
-@method('delete')
-<button type="submit" class="btn-r" style="pitition:fixed;left: 860px;px;bottom:10px;" onclick="deleteBook()">退会</button>
-</form>
-<script type="text/javascript">
-    function deleteBook(){
-        event.preventDefault();
-        if (window.confirm('本当に退会しますか?')){
-            document.getElementById('delete-form').submit();
+<div class="flex justify-center">
+    <div class="sm:w-3/4">
+        <h1>会員情報</h1>
+        <div class="p-3 rounded-lg mb-10 bg-white ">
+            <div class="grid grid-cols-1 sm:gap-y-2 sm:grid-cols-2 w-4/5 items-center">
+            <div class="sm:pl-32">名前</div>
+            <div class="pl-6">{{$user->name}}</div>
+            <div class="sm:pl-32">住所</div>
+            <div class="pl-6">{{$user->address}}</div>
+            <div class="sm:pl-32">電話番号</div>
+            <div class="pl-6">{{$user->tel_number}}</div>
+            <div class="sm:pl-32">メールアドレス</div>
+            <div class="pl-6">{{$user->email}}</div>
+        </div><br>
+        <p style="text-align:center">
+            <a href = "{{ route('home.edit' , Auth::id()) }}" class="btn-b">編集する</a>
+        </p>
+    </div>
+    <form action="{{ route('home.destroy' , $user->id)}}" method="post" id="delete-form">
+        @csrf
+        @method('delete')
+        <div align="right">
+            <button type="submit" class="btn-r"  onclick="deleteBook()">退会</button>
+        </div>
+    </form>
+    <script type="text/javascript">
+        function deleteBook(){
+            event.preventDefault();
+            if (window.confirm('本当に退会しますか?')){
+                document.getElementById('delete-form').submit();
+            }
         }
-    }
     </script>
-    
+</div>
 @endsection

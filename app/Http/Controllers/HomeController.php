@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use App\Models\History;
+use App\Models\Stock;
+use App\Models\Subject;
 use Validator;
 
 class HomeController extends Controller
@@ -155,7 +157,12 @@ class HomeController extends Controller
     public function history(User $user, History $history, $id)
     {
         $histories = History::where('user_id', '=', $id)->get();
-        //dd($histories);
         return view('homes.history', ['histories' => $histories]);
+    }
+
+    public function detail($id)
+    {
+        $stock = Stock::find($id);
+        return view('homes.detail', ['stock' => $stock]);
     }
 }

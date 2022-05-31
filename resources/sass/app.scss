@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+$light-blue: #39B2E5;
+$blue: #668AD8;
+$red: #D87966;
+$green: #6BE46B;
+
 html {
     font-size: 90%;
     line-height: 1.8;
@@ -17,7 +22,7 @@ h1 {
     padding: 0em 0.5em;/*文字の上下 左右の余白*/
     margin-bottom: 1.25rem;
     color: #494949;/*文字色*/
-    border-left: solid 5px #39B2E5;/*左線*/
+    border-left: solid 5px $light-blue;/*左線*/
     border-bottom: solid 3px #d7d7d7;/*下線*/
     max-height: 100px;
     width: 300px;
@@ -25,14 +30,12 @@ h1 {
 .card {
     border-color: #ffffe0;
 }
-.stock {
-    float: right;
-}
+
 h3 {
     padding: 0.25em 0.5em;/*上下 左右の余白*/
     color: #494949;/*文字色*/
     background: transparent;/*背景透明に*/
-    border-left: solid 5px #39B2E5;/*左線*/
+    border-left: solid 5px $light-blue;/*左線*/
 }
 #form {
     background-color: #FFF;
@@ -40,6 +43,12 @@ h3 {
     // border: double 5px white;
 }
 
+.index {
+    padding-left: 0.75rem;
+    background-color: #ffffe0;
+    border-bottom: 1px solid #e5e7eb;
+    font-weight: bold;
+}
 a:link {
     text-decoration: none;
 }
@@ -62,8 +71,8 @@ textarea {
     padding: 10px;
 }
 header {
-    background-color: #39B2E5;
-    //background-color: #D87966;
+    background-color: $light-blue;
+    //background-color: $red;
     color: #fff;
 }
 
@@ -77,6 +86,8 @@ header .brand {
 }
 .navigation {
     display: flex;
+    //display: inline-block;
+    vertical-align: middle;
     margin: 0;
     padding: 0;
     list-style: none;
@@ -88,10 +99,10 @@ table{
     border-collapse: collapse;
 }
 td .show {
-    color: #668AD8;
+    color: $light-blue;
 }
 th {
-    //color: #668AD8;
+    //color: $blue;
     //background-color: #fff;
     background-color: #ffffe0;
     font-weight: bold;
@@ -121,23 +132,20 @@ dd {
 svg.w-5.h-5 {
     width: 25px;
     vertical-align: middle;
-
 }
 .aru {
-    color: #D87966;
+    color: $red;
     font-weight: bold;
 }
 .title{
     font-size: 25px;
 }
-
 .main {
     position: relative;
     left: 20em;
     top: -40px;
     width: 750px;
 }
-
 #conf{
     position: relative;
     left: 10em;
@@ -166,23 +174,24 @@ svg.w-5.h-5 {
 }
 .err_msg{
     color:red;
+    font-size: 0.8em
 }
-.btn-b{
 
+.btn-b{
     position: relative;
     display: inline-block;
     font-weight: bold;
     padding: 0.5em 1em;
     text-decoration: none;
-    border-left: solid 4px #668AD8;
-    border-right: solid 4px #668AD8;
-    color: #668AD8;
+    border-left: solid 4px $blue;
+    border-right: solid 4px $blue;
+    color: $blue;
     //background: #E1F3FF;
     background-color: #ffffe0;
     transition: .4s;
   }
   .btn-b:hover {
-    background: #668AD8;
+    background: $blue;
     color: #FFF;
   }
 
@@ -192,15 +201,15 @@ svg.w-5.h-5 {
     font-weight: bold;
     padding: 0.5em 1em;
     text-decoration: none;
-    border-left: solid 4px #D87966;
-    border-right: solid 4px #D87966;
-    color: #D87966;
+    border-left: solid 4px $red;
+    border-right: solid 4px $red;
+    color: $red;
     //background: #E1F3FF;
     background-color: #ffffe0;
     transition: .4s;
   }
   .btn-r:hover {
-    background: #D87966;
+    background: $red;
     color: #FFF;
   }
 
@@ -210,16 +219,16 @@ svg.w-5.h-5 {
     font-weight: bold;
     padding: 0.5em 1em;
     text-decoration: none;
-    border-left: solid 4px #6BE46B;
-    border-right: solid 4px #6BE46B;
-    color: #6BE46B;
+    border-left: solid 4px $green;
+    border-right: solid 4px $green;
+    color: $green;
     //background: #E1F3FF;
 
     background-color: #ffffe0;
     transition: .4s;
   }
   .btn-g:hover {
-    background: #6BE46B;
+    background: $green;
     color: #FFF;
   }
   .btn-black{
