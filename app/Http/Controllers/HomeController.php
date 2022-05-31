@@ -165,4 +165,12 @@ class HomeController extends Controller
         $stock = Stock::find($id);
         return view('homes.detail', ['stock' => $stock]);
     }
+
+    public function subject_history(User $user, Stock $history, $id)
+    {
+        $histories = Stock::where('user_id', '=', $id)->get();
+        // dd($histories);
+        return view('homes.subject_history', ['histories' => $histories]);
+
+    }
 }

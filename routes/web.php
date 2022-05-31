@@ -66,6 +66,7 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::group(['middleware' => ['auth']], function(){
     Route::get('home/{id}/history', [HomeController::class, 'history'])->name('home.history');
     Route::get('home/{id}/detail', [HomeController::class, 'detail'])->name('home.detail');
+    Route::get('home/{id}/subject_history', [HomeController::class, 'subject_history'])->name('home.subject_history');
     Route::post('home/{id}/post' , [HomeController::class, 'post'])->name('home.post');
     Route::get('home/{id}/confirm' , [HomeController::class, 'confirm'])->name('home.confirm');
     Route::resource('home' , HomeController::class);

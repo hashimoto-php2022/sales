@@ -32,6 +32,7 @@
                 <div class="index">備考</div>
                 <div class="sm:col-span-2 pl-3 border-b">{{ $stock->remarks }}</div>
             </div>
+
         </div>
         <div class="flex justify-center">
             <div class="flex flex-col-reverse sm:flex-row">

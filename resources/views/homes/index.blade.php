@@ -11,6 +11,7 @@
 
     <a href="{{ route('home.history', $id) }}" class="btn-g sm:m-3">購入履歴</a>
     
+    <a href="{{ route('home.subject_history', $id) }}" class="btn-r">登録履歴</a>
 </p><br>
 
 <h3 style="">自分の出品している教科書</h3>

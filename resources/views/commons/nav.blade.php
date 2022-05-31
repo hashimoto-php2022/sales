@@ -38,5 +38,4 @@
         <a href="{{ route('login') }}">ログイン</a>
     </li>
 </ul>
-
 @endif
