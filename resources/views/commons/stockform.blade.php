@@ -2,11 +2,11 @@
     <table class="">
         <tr>
             <th>教科書名</th>
-            <td><input type="text" name="title" id="title" class="w-80" value={{ request('title') }}></td>
+            <td><input type="text" name="title" id="title" class="sm:w-80" value={{ request('title') }}></td>
         </tr>
         <tr>
             <th>著者名</th>
-            <td><input type="text" name="author" id="author" class="w-80" value={{ request('author') }}></td>
+            <td><input type="text" name="author" id="author" class="sm:w-80" value={{ request('author') }}></td>
         </tr>
         <tr>
             <th>分類</th>
@@ -30,12 +30,14 @@
             </select></td>
         </tr>
     </table>
-    <label for="nozoku">
-        <input id="nozoku" type="radio" name="stock" value="1" @if("1" == request('stock')) checked @endif>在庫なしを除く
-    </label>
-    <label for="hukumu">
-        <input id="hukumu" type="radio" name="stock" value="2" @if("2" == request('stock') || "" == request('stock')) checked @endif>在庫なしを含む
-    </label>
+    <div class="radio">
+        <label for="nozoku">
+            <input id="nozoku" type="radio" name="stock" value="1" @if("1" == request('stock')) checked @endif>在庫なしを除く
+        </label>
+        <label for="hukumu">
+            <input id="hukumu" type="radio" name="stock" value="2" @if("2" == request('stock') || "" == request('stock')) checked @endif>在庫なしを含む
+        </label>
+    </div>
     <p>
         <button type="submit" class="btn-black mt-5">検索</button>
     </p>

@@ -10,7 +10,7 @@
 
         @foreach ($histories as $history)
         <tr>
-            <td>{{ $history->stock->subject->title }}</td>
+            <td><a href="{{ route('home.detail', $history->stock_id) }}" class="show">{{ $history->stock->subject->title }}</a></td>
             <td>{{ $history->created_at }}</td>
         </tr>
         @endforeach
